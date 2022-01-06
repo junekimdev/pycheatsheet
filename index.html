@@ -1,0 +1,4030 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파이썬 요약집(기초)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-media.css" />
+    <script src="main.js" defer></script>
+
+    <link rel="canonical" href="https://pycheatsheet.junekim.xyz" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="파이썬 요약집(기초)" />
+    <meta name="author" content="junekimdev" />
+    <meta property="article:author" content="junekimdev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="파이썬 요약집(기초)" />
+    <meta property="og:description" content="파이썬 요약집(기초)" />
+    <meta property="og:site_name" content="파이썬 요약집(기초)" />
+    <meta property="og:url" content="https://pycheatsheet.junekim.xyz" />
+    <meta
+      property="og:image"
+      content="https://pycheatsheet.junekim.xyz/py-banner.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://pycheatsheet.junekim.xyz/py-banner.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="파이썬 요약집(기초)" />
+    <meta name="twitter:title" content="파이썬 요약집(기초)" />
+    <meta name="twitter:description" content="파이썬 요약집(기초)" />
+    <meta name="twitter:creator" content="junekimdev" />
+    <meta
+      name="twitter:image"
+      content="https://pycheatsheet.junekim.xyz/py-banner.png"
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a9a8ff" />
+    <meta name="msapplication-TileColor" content="#a9a8ff" />
+    <meta name="theme-color" content="#a9a8ff" />
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <picture
+          ><source srcset="py.webp" type="image/webp" />
+          <img src="py.png" alt="logo"
+        /></picture>
+        <h1>파이썬 요약집(기초)</h1>
+      </div>
+      <p><small>python version: 3.10</small></p>
+    </header>
+    <main>
+      <nav id="menu" class="none">
+        <a class="L1" href="#basic">기본(Basic)</a>
+        <a class="L1" href="#operators">연산자(Operators)</a>
+        <a class="L2" href="#op-arithmetic">수리(Arithmetic) 연산</a>
+        <a class="L2" href="#op-assignment">할당(Assignment) 연산</a>
+        <a class="L2" href="#op-comparison">비교(Comparison) 연산</a>
+        <a class="L2" href="#op-logical">논리(Logical) 연산</a>
+        <a class="L2" href="#op-identity">동일성(Identity) 연산</a>
+        <a class="L2" href="#op-membership">멤버쉽(Membership) 연산</a>
+        <a class="L2" href="#op-bitwise">비트(Bitwise) 연산</a>
+        <a class="L1" href="#variable">변수(Variable)</a>
+        <a class="L1" href="#types">자료형(Data Types)</a>
+        <a class="L2" href="#type-numbers">숫자(Numbers)</a>
+        <a class="L2" href="#type-string">문자열(String)</a>
+        <a class="L3" href="#type-string-formatting">포매팅(Formatting)</a>
+        <a class="L2" href="#type-collections">콜렉션(Collections)</a>
+        <a class="L3" href="#indexing">인덱싱(Indexing)</a>
+        <a class="L3" href="#slicing">슬라이싱(Slicing)</a>
+        <a class="L2" href="#type-boolean">불리언(Boolean)</a>
+        <a class="L1" href="#controls">제어문(Controls)</a>
+        <a class="L2" href="#ctl-conditionals">조건문(Conditionals)</a>
+        <a class="L3" href="#ctl-assign-exp">할당(Assignment) 표현</a>
+        <a class="L2" href="#ctl-loops">반복문(Loops)</a>
+        <a class="L3" href="#ctl-list-compre">리스트 내포</a>
+        <a class="L1" href="#functions">함수(Functions)</a>
+        <a class="L2" href="#func-params">매개변수(Parameters)</a>
+        <a class="L3" href="#func-variadic">임의의 인자</a>
+        <a class="L2" href="#func-return">return문</a>
+        <a class="L2" href="#func-calling">함수의 호출(Calling)</a>
+        <a class="L2" href="#func-inner-func">함수 내의 함수</a>
+        <a class="L3" href="#func-recursive">재귀(Recursive) 함수</a>
+        <a class="L2" href="#func-lambda">람다(Lambda) 표현</a>
+        <a class="L2" href="#func-input">입력(Input) 함수</a>
+        <a class="L2" href="#func-files">파일(Files) 읽고 쓰기</a>
+        <a class="L2" href="#func-docstring">설명글(Docstring)</a>
+        <a class="L1" href="#classes">클래스(Classes)</a>
+        <a class="L2" href="#class-concepts">개념(Concepts)</a>
+        <a class="L2" href="#class-class">class문</a>
+        <a class="L2" href="#class-gen-and-del">객체의 생성과 삭제</a>
+        <a class="L2" href="#class-object-member">객체 속성과 메서드</a>
+        <a class="L2" href="#class-class-member">클래스 변수와 메서드</a>
+        <a class="L2" href="#class-inherit">상속(Inheritance)</a>
+        <a class="L1" href="#modules">모듈(Modules)</a>
+        <a class="L2" href="#module-create">만들기(Create)</a>
+        <a class="L2" href="#module-import">가져오기(Import)</a>
+        <a class="L3" href="#module-from-import">멤버 가져오기</a>
+        <a class="L3" href="#module-as">as 키위드</a>
+        <a class="L2" href="#module-name">__name__ 변수</a>
+        <a class="L2" href="#module-main">메인모듈 실행하기</a>
+        <a class="L1" href="#packages">패키지(Packages)</a>
+        <a class="L2" href="#package-create">만들기(Create)</a>
+        <a class="L2" href="#package-init">__init__.py 파일</a>
+        <a class="L2" href="#package-import">가져오기(Import)</a>
+        <a class="L3" href="#package-import">환경변수 PYTHONPATH</a>
+        <a class="L3" href="#package-relative">패키지의 상대 경로</a>
+        <a class="L1" href="#exceptions">예외처리(Exceptions)</a>
+        <a class="L2" href="#exception-try">try문</a>
+        <a class="L2" href="#exception-raise">raise문</a>
+        <a class="L3" href="#exception-inherit">사용자 정의 예외클래스</a>
+        <a class="L1" href="#references">참고자료(References)</a>
+      </nav>
+      <section>
+        <article>
+          <h2 id="basic">기본(Basic)</h2>
+          <h3>파이썬(Python)의 개요</h3>
+          <li>
+            파이썬은 1991년 네덜란드의 귀도 반 로섬(Guido van Rossum)이 개발한
+            인터프리터 언어이다.
+          </li>
+          <li>
+            인터프리터 언어란, 코드를 한 줄씩 읽고 컴파일해서 즉시 실행하는
+            프로그래밍 언어를 말한다.
+          </li>
+          <li>
+            인터프리터가 한줄한줄 실행결과를 반환하기 때문에 빠른 개발이
+            가능하다.
+          </li>
+          <li>파이썬은 객체지향 프로그램밍(OOP) 언어이다.</li>
+          <li>파이썬은 오픈소스이다.</li>
+          <li>
+            파이썬은 크게 버전2와 버전3로 나눌 수 있으며, 버전2와 버전3는 호환이
+            되지 않는 부분이 많다.
+          </li>
+          <h3>들여쓰기(Indentation)</h3>
+          <li>코드블럭을 구분하기위해 사용한다.</li>
+          <li>
+            제어문, 함수, 클래스를 정의할 때 <code>:</code>의 다음 줄에
+            들여쓰기를 추가해야한다.
+          </li>
+          <li>
+            특별한 규칙은 없으나, 일관성을 유지하지 않으면 에러가 발생한다.
+          </li>
+          <li>보통 들여쓰기로 띄어쓰기(space) 4칸을 한다.</li>
+          <h3>주석(Comments)</h3>
+          <pre>
+<code class="comment">#주석의 예</code>
+<code>a = 1    </code><code class="comment">#변수 a에 대한 설명을 주석으로 달아주면 좋음</code>
+</pre>
+          <li>기호 <code>#</code> 부터 그 줄의 끝까지를 주석으로 인식한다.</li>
+          <li>문자열 내부의 <code>#</code>은 주석의 시작을 의미하지 않는다.</li>
+          <li>
+            주석은 사람의 이해를 돕기 위한 코드의 설명이지, 코드의 일부가
+            아니다.
+          </li>
+          <li>적절한 주석은 코드의 유지보수에 필수적이다.</li>
+        </article>
+        <article>
+          <h2 id="operators">연산자(Operators)</h2>
+          <p>
+            클래스에 연산자 오버라이딩(overriding) 메서드를 정의하였다면, 그
+            클래스의 객체에 한하여 전혀 다른 의미로 사용될 수도 있다.
+          </p>
+
+          <h3 id="op-arithmetic">수리(Arithmetic) 연산</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>+</td>
+                  <td>더하기</td>
+                  <td><code>a + b</code></td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>빼기</td>
+                  <td><code>a - b</code></td>
+                </tr>
+                <tr>
+                  <td>*</td>
+                  <td>곱하기</td>
+                  <td><code>a * b</code></td>
+                </tr>
+                <tr>
+                  <td>/</td>
+                  <td>나누기</td>
+                  <td><code>a / b</code></td>
+                </tr>
+                <tr>
+                  <td>%</td>
+                  <td>나머지</td>
+                  <td><code>a % b</code></td>
+                </tr>
+                <tr>
+                  <td>//</td>
+                  <td>몫</td>
+                  <td><code>a // b</code></td>
+                </tr>
+                <tr>
+                  <td>**</td>
+                  <td>제곱</td>
+                  <td><code>a ** b</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <code>*</code>, <code>**</code> 연산자는 문맥에 따라서 unpacking
+            연산자로 사용되는 경우도 있다.
+          </p>
+          <p>자료형에 따라 수리연산자는 다른 의미로 사용될 수도 있다.</p>
+
+          <h3 id="op-assignment">할당(Assignment) 연산</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                  <th>동일표현</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>=</td>
+                  <td>변수에 저장</td>
+                  <td><code>a = 3</code></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>+=</td>
+                  <td>더해서 저장</td>
+                  <td><code>a += 3</code></td>
+                  <td><code>a = a + 3</code></td>
+                </tr>
+                <tr>
+                  <td>-=</td>
+                  <td>빼서 저장</td>
+                  <td><code>a -= 3</code></td>
+                  <td><code>a = a - 3</code></td>
+                </tr>
+                <tr>
+                  <td>*=</td>
+                  <td>곱해서 저장</td>
+                  <td><code>a *= 3</code></td>
+                  <td><code>a = a * 3</code></td>
+                </tr>
+                <tr>
+                  <td>/=</td>
+                  <td>나눠서 저장</td>
+                  <td><code>a /= 3</code></td>
+                  <td><code>a = a / 3</code></td>
+                </tr>
+                <tr>
+                  <td>%=</td>
+                  <td>나눠서 나머지 저장</td>
+                  <td><code>a %= 3</code></td>
+                  <td><code>a = a % 3</code></td>
+                </tr>
+                <tr>
+                  <td>//=</td>
+                  <td>나눠서 몫 저장</td>
+                  <td><code>a //= 3</code></td>
+                  <td><code>a = a // 3</code></td>
+                </tr>
+                <tr>
+                  <td>**=</td>
+                  <td>제곱해서 저장</td>
+                  <td><code>a **= 3</code></td>
+                  <td><code>a = a ** 3</code></td>
+                </tr>
+                <tr>
+                  <td>&=</td>
+                  <td>AND해서 저장</td>
+                  <td><code>a &= 0b1010</code></td>
+                  <td><code>a = a & 0b1010</code></td>
+                </tr>
+                <tr>
+                  <td>|=</td>
+                  <td>OR해서 저장</td>
+                  <td><code>a |= 0b1010</code></td>
+                  <td><code>a = a | 0b1010</code></td>
+                </tr>
+                <tr>
+                  <td>^=</td>
+                  <td>XOR해서 저장</td>
+                  <td><code>a ^= 0b1010</code></td>
+                  <td><code>a = a ^ 0b1010</code></td>
+                </tr>
+                <tr>
+                  <td>&gt;&gt;=</td>
+                  <td>Bit 오른쪽 이동해서 저장</td>
+                  <td><code>a &gt;&gt;= 3</code></td>
+                  <td><code>a = a &gt;&gt; 3</code></td>
+                </tr>
+                <tr>
+                  <td>&lt;&lt;=</td>
+                  <td>Bit 왼쪽 이동해서 저장</td>
+                  <td><code>a &lt;&lt;= 3</code></td>
+                  <td><code>a = a &lt;&lt; 3</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="op-comparison">비교(Comparison) 연산</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                  <th>해석</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>==</td>
+                  <td>같다</td>
+                  <td><code>a == b</code></td>
+                  <td>a 와 b 가 같으면 참</td>
+                </tr>
+                <tr>
+                  <td>!=</td>
+                  <td>같지 않다</td>
+                  <td><code>a != b</code></td>
+                  <td>a 와 b 가 같지 않으면 참</td>
+                </tr>
+                <tr>
+                  <td>&gt;</td>
+                  <td>크다</td>
+                  <td><code>a &gt; b</code></td>
+                  <td>a 가 b 보다 크면 참</td>
+                </tr>
+                <tr>
+                  <td>&lt;</td>
+                  <td>작다</td>
+                  <td><code>a &lt; b</code></td>
+                  <td>a 가 b 보다 작으면 참</td>
+                </tr>
+                <tr>
+                  <td>&gt;=</td>
+                  <td>크거나 같다</td>
+                  <td><code>a &gt;= b</code></td>
+                  <td>a 가 b 보다 크거나 같으면 참</td>
+                </tr>
+                <tr>
+                  <td>&lt;=</td>
+                  <td>작거나 같다</td>
+                  <td><code>a &lt;= b</code></td>
+                  <td>a 가 b 보다 작거나 같으면 참</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>비교 연산의 결과는 불리언(Boolean)이다.</p>
+
+          <h3 id="op-logical">논리(Logical) 연산</h3>
+          <p>
+            논리연산자는 연산의 결과로 참이면 <code>True</code>, 거짓이면
+            <code>False</code>를 <code>return</code>하는 연산자이다.
+          </p>
+          <p>논리 연산자는 다른 말로 불리언(Boolean) 연산자라고도 한다.</p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                  <th>해석</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>and</td>
+                  <td>양쪽이 모두 참일 때 참</td>
+                  <td><code>a and b</code></td>
+                  <td>a 가 <strong>참이고</strong>, b 가 참이면, 참</td>
+                </tr>
+                <tr>
+                  <td>or</td>
+                  <td>한쪽만 참이어도 참</td>
+                  <td><code>a or b</code></td>
+                  <td>a 가 <strong>참이거나</strong>, b 가 참이면, 참</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">not</td>
+                  <td rowspan="2">참과 거짓을 바꾸기</td>
+                  <td><code>not a</code></td>
+                  <td>a 가 거짓이면 참, 참이면 거짓</td>
+                </tr>
+                <tr>
+                  <td><code>not(a &gt; 1)</code></td>
+                  <td>a 가 1 보다 크지 않으면 참</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>반드시 소문자로 사용하여야 한다</p>
+
+          <h3 id="op-identity">동일성(Identity) 연산</h3>
+          <p>
+            동일성 연산자는 변수의 id를 확인하여 같으면 <code>True</code>,
+            다르면 <code>False</code>를 <code>return</code>하는 연산자이다.
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                  <th>동일표현</th>
+                  <th>해석</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>is</td>
+                  <td>변수id가 같으면 참</td>
+                  <td><code>a is b</code></td>
+                  <td><code>id(a) == id(b)</code></td>
+                  <td>a 와 b 가 동일 변수면 참</td>
+                </tr>
+                <tr>
+                  <td>is not</td>
+                  <td>변수id가 다르면 참</td>
+                  <td><code>a is not b</code></td>
+                  <td><code>id(a) != id(b)</code></td>
+                  <td>a 와 b 가 동일 변수가 아니면 참</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="op-membership">멤버쉽(Membership) 연산</h3>
+          <p>
+            멤버쉽 연산자는 어떤 값이 리스트, 튜플, 딕션네리, 세트 타입의 변수에
+            포함되는지 아닌지를 확인하는 연산자이다.
+          </p>
+          <p>
+            주의할 점은, dictionary 타입을 대상으로 하면 key에 포함되는지만을
+            확인한다.
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                  <th>해석</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>in</td>
+                  <td>포함되면 참</td>
+                  <td><code>a in [1,2,3]</code></td>
+                  <td>a 가 1,2,3 중에 하나이면 참</td>
+                </tr>
+                <tr>
+                  <td>not in</td>
+                  <td>포함되지 않으면 참</td>
+                  <td><code>a not in [1,2,3]</code></td>
+                  <td>a 가 1,2,3 중에 하나이지 않으면 참</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="op-bitwise">비트(Bitwise) 연산</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>연산자</th>
+                  <th>설명</th>
+                  <th>code 예제</th>
+                  <th>해석</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&amp;</td>
+                  <td>AND</td>
+                  <td><code>0b0101 & 0b1111</code></td>
+                  <td>
+                    같은 자리의 bit이 둘 다 1 일때 1 이되므로, 결과는
+                    <code>0b0101</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>|</td>
+                  <td>OR</td>
+                  <td><code>0b0101 | 0b1111</code></td>
+                  <td>
+                    같은 자리의 bit이 둘 중 하나라도 1 일때 1 이되므로, 결과는
+                    <code>0b1111</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>^</td>
+                  <td>XOR</td>
+                  <td><code>0b0101 ^ 0b1111</code></td>
+                  <td>
+                    같은 자리의 bit이 같으면 1, 다르면 0 이되므로, 결과는
+                    <code>0b0101</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>~</td>
+                  <td>NOT</td>
+                  <td><code>~ 0b0101</code></td>
+                  <td>
+                    모든 bit을 0 이면 1 로, 1 이면 0으로 변환하므로, 결과는
+                    <code>0b1010</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&gt;&gt;</td>
+                  <td>오른쪽 쉬프트</td>
+                  <td><code>0b0101 &gt;&gt; 1</code></td>
+                  <td>
+                    모든 bit을 오른쪽으로 1 씩 이동시키고 양수는 0을 채우므로,
+                    결과는 <code>0b0010</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&lt;&lt;</td>
+                  <td>왼쪽 쉬프트</td>
+                  <td><code>0b0101 &lt;&lt; 1</code></td>
+                  <td>
+                    모든 bit을 왼쪽으로 1 씩 이동시키고 0을 채우므로, 결과는
+                    <code>0b1010</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article>
+          <h2 id="variable">변수(Variable)</h2>
+          <p>
+            변수란, 데이터 저장소를 말하며, 컴퓨터 메모리의 물리적인 공간을
+            사용한다.
+          </p>
+          <li>변수 만들기</li>
+          <pre>
+<code class="comment">#하나의 변수 생성</code>
+<code>변수명 = 데이터</code>
+
+<code class="comment">#복수의 변수를 한 줄에서 생성</code>
+<code>변수명1, 변수명2, 변수명3 = 데이터1, 데이터2, 데이터3</code><code class="comment">  #실제로는 튜플을 만든 후 언팩킹하는 것이다</code>
+</pre>
+          <p>
+            할당 연산자(<code>=</code>)를 사용하여 변수를 만들고 데이터를
+            저장한다.
+          </p>
+          <br />
+          <li>
+            변수의 규칙
+            <ul>
+              <li>
+                <code>변수명</code>에는 일반문자와 숫자,
+                언더스코어(<code>_</code>)만이 사용 가능하다. (특수문자 불가)
+              </li>
+              <li>숫자는 <code>변수명</code>의 첫문자가 될 수 없다.</li>
+              <li>
+                <code>변수명</code>에서 대문자와 소문자는 서로 다른 문자이다.
+              </li>
+              <li>
+                <code>변수명</code>은 보통 <code>snake_case</code> 스타일로
+                작명한다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            변수의 범위
+            <ul>
+              <li>
+                함수 내부의 변수들은 로컬 변수이다. 즉, 함수 외부에서 접근할 수
+                없는 변수이다.
+              </li>
+              <li>
+                함수 내부와 외부에 동일 이름의 변수가 있다면, 함수 내부의 변수를
+                사용한다.
+              </li>
+              <li>
+                단, 변수를 만들때, <code>global</code> 키워드를 사용하면 내부의
+                변수를 생성하지 않고 외부의 변수를 가져온다.
+              </li>
+              <li>
+                함수 내부에서 외부 변수 읽기는 가능하다. 그러나 외부 변수를
+                업데이트할 수 없다.<br />업데이트를 하려면
+                <code>global</code> 키워드를 사용해서 외부의 변수를 가져와야
+                한다.
+              </li>
+              <li>
+                함수 내부에서 또 다른 함수를 정의하는 경우,
+                <code>nonlocal</code> 키워드를 사용해 바깥 함수의 로컬 변수를
+                내부 함수로 가져올 수 있다.
+              </li>
+              <pre>
+<code>a,b,c = 1,2,3</code><code class="comment">         #글로벌 변수 생성</code>
+<code>print(a,b,c)</code><code class="comment">          #'1 2 3'</code>
+
+<code>def func1():</code><code class="comment">          #바깥 함수 정의</code>
+<code>    global a</code><code class="comment">          #글로벌 변수 a를 가져오기</code>
+<code>    b,c = 4,5</code><code class="comment">         #func1의 로컬 변수 생성</code>
+<code>    print(a,b,c)</code><code class="comment">      #'1 4 5'</code>
+
+<code>    def func2():</code><code class="comment">      #내부 함수 정의</code>
+<code>        global a</code><code class="comment">      #글로벌 변수 a를 가져오기</code>
+<code>        nonlocal b</code><code class="comment">    #func1의 로컬 변수 b를 가져오기</code>
+<code>        c = 6</code><code class="comment">         #func2의 로컬 변수 생성</code>
+<code>        print(a,b,c)</code><code class="comment">  #'1 4 6'</code>
+</pre>
+            </ul>
+          </li>
+        </article>
+        <article>
+          <h2 id="types">자료형(Data Types)</h2>
+
+          <h3 id="type-numbers">숫자(Numbers)</h3>
+          <li>타입</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>이름</th>
+                  <th>설명</th>
+                  <th>예제</th>
+                  <th>변수 만들기</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>정수형(int)</td>
+                  <td>영, 양수(자연수), 음수</td>
+                  <td>
+                    <code>0</code>, <code>1</code>, <code>2</code>,
+                    <code>-22</code>
+                  </td>
+                  <td><code>a = 12</code></td>
+                </tr>
+                <tr>
+                  <td>소수점형(float)</td>
+                  <td>소수 부분이 있는 수</td>
+                  <td>
+                    <code>1.1</code>, <code>2.087</code>, <code>3.123</code>
+                  </td>
+                  <td><code>b = 1.2</code></td>
+                </tr>
+                <tr>
+                  <td>복소수형(complex)</td>
+                  <td>허수 부분이 있는 수</td>
+                  <td><code>3+2j</code>, <code>2.1+4.3j</code></td>
+                  <td><code>c = 1+2j</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <li>특별한 표현법</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>이름</th>
+                  <th>설명</th>
+                  <th>예제</th>
+                  <th>10진수 동일값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>지수형(Exponential)<sup>*</sup></td>
+                  <td>
+                    <code>e</code> 또는 <code>E</code>를 사용하여 10진수의
+                    지수형태로 나타내는 방법
+                  </td>
+                  <td><code>4.21e5</code></td>
+                  <td><code>4.21 * 10 ** 5</code>, <code>421000</code></td>
+                </tr>
+                <tr>
+                  <td>2진수형(Binary)</td>
+                  <td>
+                    <code>0b</code>를 수 앞에 붙여서, 2진수 수를 나타내는 방법
+                  </td>
+                  <td><code>0b0111</code></td>
+                  <td><code>7</code></td>
+                </tr>
+                <tr>
+                  <td>8진수형(Octal)</td>
+                  <td>
+                    <code>0o</code>를 수 앞에 붙여서, 8진수 수를 나타내는 방법
+                  </td>
+                  <td><code>0o177</code></td>
+                  <td><code>127</code></td>
+                </tr>
+                <tr>
+                  <td>16진수형(Hexadecimal)</td>
+                  <td>
+                    <code>0x</code>를 수 앞에 붙여서, 16진수 수를 나타내는 방법
+                  </td>
+                  <td><code>0x01FF</code></td>
+                  <td><code>511</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><sup>*</sup>지수형은 과학적 표기법과 유사함</p>
+
+          <h3 id="type-string">문자열(String)</h3>
+          <p>문자열이란 문자들의 집합을 말한다.</p>
+          <li>문자열 변수 만들기</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>방법</th>
+                  <th>설명</th>
+                  <th>예제</th>
+                  <th>변수 만들기</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>큰 따옴표로 감싸기</td>
+                  <td>한줄 문자열 만들기</td>
+                  <td><code>"ab123"</code></td>
+                  <td><code>a = "ab123"</code></td>
+                </tr>
+                <tr>
+                  <td>작은 따옴표로 감싸기</td>
+                  <td>한줄 문자열 만들기</td>
+                  <td><code>'ab123'</code></td>
+                  <td><code>b = 'ab123'</code></td>
+                </tr>
+                <tr>
+                  <td>큰 따옴표로 3연속 감싸기</td>
+                  <td>여러줄 문자열 만들기</td>
+                  <td>
+                    <pre
+                      class="left"
+                    ><code>"""<br>ab123<br>mn567<br>"""</code></pre>
+                  </td>
+                  <td>
+                    <pre
+                      class="left"
+                    ><code>c = """<br>ab123<br>mn567<br>"""</code></pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>작은 따옴표로 3연속 감싸기</td>
+                  <td>여러줄 문자열 만들기</td>
+                  <td>
+                    <pre
+                      class="left"
+                    ><code>'''<br>ab123<br>mn567<br>'''</code></pre>
+                  </td>
+                  <td>
+                    <pre
+                      class="left"
+                    ><code>d = '''<br>ab123<br>mn567<br>'''</code></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>3연속 따옴표로 만들어진 문자열을 "문자열 블락"이라고도 한다.</p>
+          <br />
+          <li>
+            큰 따옴표로 깜사인 문자열에서 작은 따옴표는 일반 문자로 취급한다.
+          </li>
+          <pre
+            class="left"
+          ><code>a = "I'm a boy."</code>    <code class="comment">#작은 따옴표는 문자열의 일부</code></pre>
+          <br />
+          <li>
+            작은 따옴표로 깜사인 문자열에서 큰 따옴표는 일반 문자로 취급한다.
+          </li>
+          <pre
+            class="left"
+          ><code>a = '매우 "중요한" 문자열'</code>    <code class="comment">#큰 따옴표는 문자열의 일부</code></pre>
+          <br />
+          <li>
+            따옴표 없이 문자를 사용하면 문자열을 만드는 것이 아니라, 해당 문자를
+            이름으로 하는 변수를 참조한다.
+          </li>
+          <pre>
+<code>a = food</code><code class="comment">  #food라는 변수가 없으므로 에러가 발생</code>
+</pre>
+          <br />
+          <li>
+            문자열 내부에서 감싸고 있는 따옴표와 동일한 따옴표를 문자로
+            사용하려면 <code>\"</code>, <code>\'</code>로 써야한다.
+          </li>
+          <pre>
+<code>a = "매우 \"중요한\" 문자열"</code>
+<code>b = 'I\'m a boy'</code>
+</pre>
+          <p>
+            특수문자 <code>\</code>는 문자열 내부에서는 escape라는 특별한 의미를
+            가지고 있다.
+          </p>
+
+          <h3 id="type-string-formatting">포매팅(formatting)</h3>
+          <li>3가지 포매팅 방식</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>방식</th>
+                  <th>형식</th>
+                  <th>예제</th>
+                  <th>예제의 결과</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>% 포맷코드</td>
+                  <td><code>"(% 포맷코드)를 포함한 문자열" % 데이터</code></td>
+                  <td>
+                    <pre><code>"I have %d apples." % number</code></pre>
+                  </td>
+                  <td><code>"I have 3 apples."</code></td>
+                </tr>
+                <tr>
+                  <td>포맷 함수</td>
+                  <td>
+                    <code
+                      >"{0:포매팅 타입}를 포함한 문자열".format(데이터)</code
+                    >
+                  </td>
+                  <td>
+                    <pre><code>"I have {0} apples.".format(number)</code></pre>
+                  </td>
+                  <td><code>"I have 3 apples."</code></td>
+                </tr>
+                <tr>
+                  <td>f-문자열</td>
+                  <td><code>f"{데이터:포매팅 타입}를 포함한 문자열"</code></td>
+                  <td>
+                    <pre><code>f"I have {number} apples."</code></pre>
+                  </td>
+                  <td><code>"I have 3 apples."</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><code>:포매팅 타입</code>은 옵션</p>
+          <br />
+          <li>문자열 % 포맷코드</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>코드</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>%s</code></td>
+                  <td>문자열(String)</td>
+                </tr>
+                <tr>
+                  <td><code>%c</code></td>
+                  <td>문자 1개(character)</td>
+                </tr>
+                <tr>
+                  <td><code>%d</code></td>
+                  <td>정수(Integer)</td>
+                </tr>
+                <tr>
+                  <td><code>%f</code></td>
+                  <td>부동소수(floating-point)</td>
+                </tr>
+                <tr>
+                  <td><code>%o</code></td>
+                  <td>8진수</td>
+                </tr>
+                <tr>
+                  <td><code>%x</code></td>
+                  <td>16진수</td>
+                </tr>
+                <tr>
+                  <td><code>%%</code></td>
+                  <td>문자 % 자체 (escape)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <li>포매팅 타입</li>
+          <p>
+            포맷 함수 또는 f-문자열의 <code>{}</code> 내부에서 데이터와 포매팅
+            타입을 <code>:</code>로 구분하여 포맷
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>타입</th>
+                  <th>설명</th>
+                  <th>예제</th>
+                  <th>예제의 결과</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>s</code></td>
+                  <td>데이터 자료형이 문자열인 경우</td>
+                  <td>
+                    <pre><code>f"나의 이름은 {name:s} 입니다."</code></pre>
+                  </td>
+                  <td><code>"나의 이름은 홍길동 입니다."</code></td>
+                </tr>
+                <tr>
+                  <td><code>d</code></td>
+                  <td>데이터 자료형이 정수인 경우</td>
+                  <td>
+                    <pre><code>f"나의 나이는 {age:d} 입니다."</code></pre>
+                  </td>
+                  <td><code>"나의 나이는 10 입니다."</code></td>
+                </tr>
+                <tr>
+                  <td><code>f</code></td>
+                  <td>데이터 자료형이 소수인 경우</td>
+                  <td>
+                    <pre><code>f"나의 키는 {height:f}cm 입니다."</code></pre>
+                  </td>
+                  <td><code>"나의 키는 123.1cm 입니다."</code></td>
+                </tr>
+                <tr>
+                  <td><code>.(숫자)</code></td>
+                  <td>
+                    데이터 자료형이 소수일 때,<br />소수점 아래 자리의 수의 길이
+                  </td>
+                  <td>
+                    <pre><code>f"10 나누기 3의 결과는 {result:.3f} 입니다."</code></pre>
+                  </td>
+                  <td><code>"10 나누기 3의 결과는 3.333 입니다."</code></td>
+                </tr>
+                <tr>
+                  <td><code>,</code></td>
+                  <td>1000의 자리를 콤마로 구분</td>
+                  <td>
+                    <pre><code>f"나의 월급은 {salary:,d}원 입니다."</code></pre>
+                  </td>
+                  <td><code>"나의 월급은 10,000,000원 입니다."</code></td>
+                </tr>
+                <tr>
+                  <td><code>(숫자)</code></td>
+                  <td>데이터의 최소길이</td>
+                  <td>
+                    <pre><code>f"++{greeting:6}++"</code></pre>
+                  </td>
+                  <td><code>"++hi&nbsp;&nbsp;&nbsp;&nbsp;++"</code></td>
+                </tr>
+                <tr>
+                  <td><code>&lt;</code></td>
+                  <td>공백이 있다면, 왼쪽 정렬</td>
+                  <td>
+                    <pre><code>f"++{greeting:&lt;6}++"</code></pre>
+                  </td>
+                  <td><code>"++hi&nbsp;&nbsp;&nbsp;&nbsp;++"</code></td>
+                </tr>
+                <tr>
+                  <td><code>&gt;</code></td>
+                  <td>공백이 있다면, 오른쪽 정렬</td>
+                  <td>
+                    <pre><code>f"++{greeting:&gt;6}++"</code></pre>
+                  </td>
+                  <td><code>"++&nbsp;&nbsp;&nbsp;&nbsp;hi++"</code></td>
+                </tr>
+                <tr>
+                  <td><code>^</code></td>
+                  <td>공백이 있다면, 가운데 정렬</td>
+                  <td>
+                    <pre><code>f"++{greeting:^6}++"</code></pre>
+                  </td>
+                  <td><code>"++&nbsp;&nbsp;hi&nbsp;&nbsp;++"</code></td>
+                </tr>
+                <tr>
+                  <td><code>=</code></td>
+                  <td>
+                    데이터가 숫자이고 공백이 있다면,<br />
+                    부호를 가장 왼쪽에 배치하고 공백을 채우기
+                  </td>
+                  <td>
+                    <pre><code>f"현재 기온은 {-5:=3}도 입니다"</code></pre>
+                  </td>
+                  <td><code>"현재 기온은 -&nbsp;5도 입니다"</code></td>
+                </tr>
+                <tr>
+                  <td><code>(문자)</code></td>
+                  <td>
+                    주어진 문자로 공백을 채우기<br />(반드시 정렬 타입과 함께
+                    사용하여야 함)
+                  </td>
+                  <td>
+                    <pre><code>f"{number:=^5}"</code>  <code class="comment">#"="로 공백을 채우기</code></pre>
+                  </td>
+                  <td><code>"==3=="</code></td>
+                </tr>
+                <tr>
+                  <td><code>+</code></td>
+                  <td>데이터가 숫자일 때, 반드시 부호를 붙이기</td>
+                  <td>
+                    <pre><code>f"{number:=+5}"</code></pre>
+                  </td>
+                  <td><code>"+&nbsp;&nbsp;&nbsp;3"</code></td>
+                </tr>
+                <tr>
+                  <td><code>-</code></td>
+                  <td>데이터가 숫자일 때, 음수일 때만 부호를 붙이기</td>
+                  <td>
+                    <pre><code>f"{number:=-5}"</code></pre>
+                  </td>
+                  <td><code>"&nbsp;&nbsp;&nbsp;&nbsp;3"</code></td>
+                </tr>
+                <tr>
+                  <td><code>(공백)</code></td>
+                  <td>
+                    데이터가 숫자일 때,<br />양수일 때는 공백으로 음수일 때는
+                    부호를 붙이기
+                  </td>
+                  <td>
+                    <pre><code>f"{number:= 5}"</code></pre>
+                  </td>
+                  <td><code>"&nbsp;&nbsp;&nbsp;&nbsp;3"</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <li>포매팅 타입의 순서</li>
+          <p>
+            (공백문자<sup>*</sup> - 정렬) - 부호 - 길이 - 1000의 자리 구분 -
+            소수점 아래자리 - 데이터 자료형
+          </p>
+          <p><sup>*</sup>공백문자는 정렬 타입이 있는 경우에만 사용 가능</p>
+          <pre>
+<code>number=12345.67</code><br><code>f"{number:@^+20,.3f}"</code>
+
+<code class="comment"># @^ : 가운데 정렬하고 공백은 @로 채우고</code>
+<code class="comment"># +  : 부호는 반드시 붙이고</code>
+<code class="comment"># 20 : 총길이는 20으로 하고</code>
+<code class="comment"># ,  : 1000의 자리는 콤마로 구분하고</code>
+<code class="comment"># .3 : 소수점 아래 3자리까지 출력하고</code>
+<code class="comment"># f  : number의 자료형은 소수임</code>
+
+<code class="comment"># 결과: "@@@@+12,345.670@@@@@"</code>
+</pre>
+
+          <h3 id="type-collections">콜렉션(Collections)</h3>
+          <p>콜렉션 타입으로는 리스트, 튜플, 딕셔네리, 세트가 있다.</p>
+          <br />
+          <li>변수 만들기</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>자료형</th>
+                  <th>특징</th>
+                  <th>변수 만들기 형식</th>
+                  <th>변수 만들기 예제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>리스트(list)</td>
+                  <td><code>[]</code>를 사용</td>
+                  <td>
+                    <pre>
+<code class="comment"># 방법 1</code>
+<code>변수명 = [요소1, 요소2, 요소3, ...]</code>
+
+<code class="comment"># 방법 2</code>
+<code>변수명 = list(요소1, 요소2, 요소3, ...)</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code>a = []</code><code class="comment">                 #비어있는 리스트</code>
+<code>b = [1, 2, 3]</code>
+<code>c = [1, 2, [1, 2, 3]]</code><code class="comment">  #2차원 리스트</code>
+<code>d = list(1, 2, 3)</code>
+</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>튜플(tuple)</td>
+                  <td><code>()</code>를 사용</td>
+                  <td>
+                    <pre>
+<code class="comment"># 방법 1</code>
+<code>변수명 = (요소1, 요소2, 요소3, ...)</code>
+
+<code class="comment"># 방법 2</code>
+<code>변수명 = tuple(요소1, 요소2, 요소3, ...)</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code>a = ()</code><code class="comment">                 #비어있는 튜플</code>
+<code>b = (1,)</code><code class="comment">               #요소가 하나인 경우 콤마로 끝나야 함</code>
+<code>c = (1, 2, 3)</code>
+<code>d = (1, 2, (1, 2, 3))</code><code class="comment">  #2차원 튜플</code>
+<code>e = 1, 2, 3</code><code class="comment">            #괄호를 생략할 수 있음</code>
+<code>f = tuple(1, 2, 3)</code>
+</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>딕셔네리(dict)</td>
+                  <td><code>{}</code>에 <code>키:밸류</code>를 넣어준다.</td>
+                  <td>
+                    <pre>
+<code class="comment"># 방법 1</code>
+<code>변수명 = {키1:밸류1, 키2:밸류2, ...}</code>
+
+<code class="comment"># 방법 2</code>
+<code>변수명 = dict(키1=밸류1, 키2=밸류2, ...)</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code>a = {}</code><code class="comment">                        #비어있는 딕셔네리</code>
+<code>b = {"a": 1, "b": 2, "c": 3}</code><code class="comment">  #키가 문자인 경우</code>
+<code>c = {1: "a", 2: "b", 3: "c"}</code><code class="comment">  #키가 숫자인 경우</code>
+<code>d = dict(a=1, b=2, c=3)</code>
+</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>세트(set)</td>
+                  <td><code>{}</code>를 사용</td>
+                  <td>
+                    <pre><code class="comment"># 방법 1</code>
+<code>변수명 = {요소1, 요소2, 요소3, ...}</code>
+
+<code class="comment"># 방법 2</code>
+<code>변수명 = set([요소1, 요소2, 요소3, ...])</code></pre>
+                  </td>
+                  <td>
+                    <pre>
+<code>a = set()</code><code class="comment">                          #비어있는 세트</code>
+<code>b = {1, 2, 3}</code>
+<code>c = set([1, 2, 3])</code><code class="comment">                 #리스트로 세트를 만들기</code>
+<code>d = set((1, 2, 3))</code><code class="comment">                 #튜플로 세트를 만들기</code>
+<code>e = set({"a": 1, "b": 2, "c": 3})</code><code class="comment">  #딕셔네리로 세트를 만들기</code>
+</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <code>set()</code> 함수는 리스트, 튜플, 딕셔네리 타입을 입력으로
+            받으나, 딕셔네리 타입은 키값만이 남고 밸류값은 사라진다.
+          </p>
+          <p>
+            <code>a = {}</code> 코드는 비어있는 세트가 아니라 비어있는
+            딕셔네리를 만든다.
+          </p>
+          <br />
+          <li>특성</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>자료형</th>
+                  <th>데이터 변경여부</th>
+                  <th>데이터 중복여부</th>
+                  <th>데이터간 순서여부</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>리스트</td>
+                  <td>가변</td>
+                  <td>가능</td>
+                  <td>순서가 있음</td>
+                </tr>
+                <tr>
+                  <td>튜플</td>
+                  <td>불변</td>
+                  <td>가능</td>
+                  <td>순서가 있음</td>
+                </tr>
+                <tr>
+                  <td>딕셔네리</td>
+                  <td>키 - 불변<br />밸류 - 가변</td>
+                  <td>키 - 불가능<br />밸류 - 가능</td>
+                  <td>
+                    버전 3.6 이하 - 순서가 없음<br />버전 3.7 이상 - 순서가 있음
+                  </td>
+                </tr>
+                <tr>
+                  <td>세트</td>
+                  <td>불변<br />(추가/삭제는 가능)</td>
+                  <td>불가능</td>
+                  <td>순서가 없음</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>세트는 불변타입이지만 요소의 추가, 삭제는 가능하다.</p>
+          <p>
+            세트에 중복된 데이터가 입력 또는 추가되면 자동으로 하나만 남는다.
+          </p>
+          <p>세트는 순서가 없으므로, 인덱싱을 할 수 없다.</p>
+          <br />
+          <li>데이터 CRUD(생성-읽기-업데이트-삭제) 작업</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>자료형</th>
+                  <th>생성(Create)</th>
+                  <th>읽기(Read)</th>
+                  <th>업데이트(Update)</th>
+                  <th>삭제(Delete)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>리스트</td>
+                  <td>
+                    <pre>
+<code>a = ["가", "나", "다"]</code>
+<code>b = [1, 2, 3]</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#인덱싱으로 접근</code>
+<code>c = a[0]</code>
+<code>c = a[1]</code>
+<code>c = a[-1]</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#추가(Add)</code>
+<code>a.append("라")</code><code class="comment">     #마지막에 추가</code>
+<code>a.insert(1, "라")</code><code class="comment">  #인텍스 1 위치에 추가</code>
+<code>a.extend(b)</code><code class="comment">        #a에 b 요소를 추가</code>
+<code class="comment">#추가하여 새 리스트 생성</code>
+<code>d = a + b</code><code class="comment">          #a,b를 합하기</code>
+<code>d = a * 2</code><code class="comment">          #a를 두번 반복</code>
+
+<code class="comment">#변경(Change)</code>
+<code>a[0] = "차"</code><code class="comment">            #인덱싱으로 변경</code>
+<code>a[1:2] = ["차", "타"]</code><code class="comment">  #슬라이싱으로 변경</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#pop()</code>
+<code>d = a.pop()</code><code class="comment">   #마지막 요소 삭제</code>
+<code>d = a.pop(1)</code><code class="comment">  #인덱스 1 삭제</code>
+
+<code class="comment">#remove()</code>
+<code>a.remove("다")</code><code class="comment">  #요소("다") 삭제</code>
+
+<code class="comment">#del 키워드</code>
+<code>del a[1]</code><code class="comment">   #인덱스 1 삭제</code>
+<code>del a[-1]</code><code class="comment">  #인덱스 -1 삭제</code>
+
+<code class="comment">#슬라이싱으로 여러개 삭제</code>
+<code>del a[1:]</code>
+</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>튜플</td>
+                  <td>
+                    <pre>
+<code>a = ("가", "나", "다")</code>
+<code>b = (1, 2, 3)</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#인덱싱으로 접근</code>
+<code>c = a[0]</code>
+<code>c = a[1]</code>
+<code>c = a[-1]</code>
+</pre>
+                  </td>
+                  <td>불가<br />(업데이트를 하려면 새로 생성해야 함)</td>
+                  <td>불가<br />(변수 삭제만 가능)</td>
+                </tr>
+                <tr>
+                  <td>딕셔네리</td>
+                  <td>
+                    <pre>
+<code>a = {"가":1, "나":2, "다":3}</code>
+<code>b = {1:"가", 2:"나", 3:"다"}</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#키로 접근</code>
+<code>c = a[1]</code>
+<code>c = a[2]</code>
+<code>c = a["가"]</code>
+<code>c = a["나"]</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#키가 이미 있으면 변경, 키가 없으면 추가</code>
+
+<code class="comment">#키로 접근하여</code>
+<code>a[1] = "라"</code><code class="comment">         #변경</code>
+<code>a["라"] = 4</code><code class="comment">         #추가</code>
+
+<code class="comment">#update()로</code>
+<code>a.update({1:"라"})</code><code class="comment">  #변경</code>
+<code>a.update({4:"라"})</code><code class="comment">  #추가</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#pop()</code>
+<code>d = a.pop("가")</code><code class="comment">  #a["가"] 삭제</code>
+
+<code class="comment">#popitem()</code>
+<code class="comment">#마지막에 추가된 키가 삭제됨</code>
+<code>d = a.popitem()</code>
+
+<code class="comment">#del 키워드</code>
+<code>del a["가"]</code><code class="comment">  #a["가"] 삭제</code>
+
+<code class="comment">#clear()</code>
+<code>a.clear()</code><code class="comment">  #모든 키 삭제</code>
+</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>세트</td>
+                  <td>
+                    <pre>
+<code>a = {"가", "나", "다"}</code>
+<code>b = {1, 2, 3}</code>
+</pre>
+                  </td>
+                  <td>
+                    개별 데이터 읽기 불가<br />(세트에 포함 여부만<br />확인할
+                    수 있음)
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#추가는 가능하나, 변경은 불가</code>
+
+<code class="comment">#add()</code>
+<code class="comment">#하나의 요소 추가</code>
+<code>a.add("라")</code>
+<code>a.add(10)</code>
+
+<code class="comment">#update()</code>
+<code>a.update(b)</code><code class="comment">          #b를 더하기</code>
+<code>a.update({1, 2, 3})</code><code class="comment">  #세트</code>
+
+
+<code class="comment">#세트, 리스트, 튜플의 요소들을 추가</code>
+<code>a.update([1, 2, 3])</code><code class="comment">  #리스트</code>
+<code>a.update((1, 2, 3))</code><code class="comment">  #튜플</code>
+
+<code class="comment">#딕셔네리의 키들을 추가</code>
+<code>a.update({1:"가", 2:"나", 3:"다"})</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<code class="comment">#remove()</code>
+<code>a.remove("나")</code><code class="comment">  #요소 삭제</code>
+<code>a.remove("카")</code><code class="comment">  #에러 발생</code>
+
+<code class="comment">#discard()</code>
+<code>a.discard("나")</code><code class="comment">  #요소 삭제</code>
+<code>a.discard("카")</code><code class="comment">  #에러 없음</code>
+
+<code class="comment">#pop()</code>
+<code>d = a.pop()</code><code class="comment">  #랜덤 요소 삭제</code>
+
+<code class="comment">#clear()</code>
+<code>a.clear()</code><code class="comment">  #모든 요소 삭제</code>
+
+<code class="comment">#del 키워드</code>
+<code>del a</code><code class="comment">  #변수 삭제</code>
+</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            딕셔네리의 삭제 메서드인 <code>popitem()</code>는 추가된 순서를
+            기준으로 마지막 <code>키:밸류</code>를 삭제하므로, 버전 3.6 이하에선
+            랜덤하게 삭제되므로 주의할 것
+          </p>
+          <p>
+            세트의 삭제 메서드인 <code>remove()</code>은 해당 요소가 없는 경우에
+            에러를 발생시킨다.
+          </p>
+          <p>
+            세트의 삭제 메서드인 <code>discard()</code>은 해당 요소가 없는
+            경우에도 에러를 발생시키지 않는다.
+          </p>
+          <p>
+            세트의 삭제 메서드인 <code>pop()</code>은 순서가 없는 세트의 특성상
+            랜덤하게 삭제되므로 주의할 것
+          </p>
+
+          <h3 id="indexing">인덱싱(Indexing)</h3>
+          <pre><code>변수명[인덱스]</code></pre>
+          <li>인덱스(index)란, 요소들의 순서를 말한다.</li>
+          <li>인덱스는 0부터 시작하여 1씩 증가한다.</li>
+          <br />
+          <li>인덱싱(indexing)이란, 인덱스로 요소에 접근하는 것을 말한다.</li>
+          <li>
+            인덱싱은 <code>[]</code>를 사용한다. 리스트와 헷갈리지 않도록 주의할
+            것
+          </li>
+          <br />
+          <li>
+            마이너스 인덱싱
+            <ul>
+              <pre><code>마지막_요소 = 변수명[-1]</code></pre>
+              <li>
+                인덱스는 마지막 요소를 -1로 하여 마지막에서 첫 요소 방향으로 1씩
+                감소하게 매길 수도 있다.
+              </li>
+              <li>마이너스 인덱스와 일반 인덱스를 함께 사용할 수 있다.</li>
+            </ul>
+          </li>
+          <li>
+            2차원 인덱싱
+            <ul>
+              <pre><code>변수명[1차원 인덱스][2차원 인덱스]</code></pre>
+              <pre>
+<code class="comment">#예제</code>
+<code>a = [1, 2, 3, ["a", "b", "c"]]</code>
+
+<code class="comment">#a[3] => ["a", "b", "c"]</code>
+<code>b = a[3][0]</code><code class="comment">    #b = "a"</code>
+<code>c = a[3][1]</code><code class="comment">    #c = "b"</code>
+<code>d = a[3][2]</code><code class="comment">    #d = "c"</code>
+</pre>
+              <p>2차원 이상의 고차원 인덱싱도 동일한 원리</p>
+            </ul>
+          </li>
+
+          <h3 id="slicing">슬라이싱(Slicing)</h3>
+          <pre><code>새로운_변수명 = 변수명[시작_인덱스(포함):끝_인덱스(불포함):스텝]</code></pre>
+          <br />
+          <li>특성</li>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>시작_인덱스</th>
+                  <th>끝_인덱스</th>
+                  <th>스텝</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>포함 여부</th>
+                  <td>&bigcirc;</td>
+                  <td>&cross;</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <th>생략 가능</th>
+                  <td>&bigcirc;</td>
+                  <td>&bigcirc;</td>
+                  <td>&bigcirc;</td>
+                </tr>
+                <tr>
+                  <th>마이너스 값 가능</th>
+                  <td>&bigcirc;</td>
+                  <td>&bigcirc;</td>
+                  <td>&bigcirc;</td>
+                </tr>
+                <tr>
+                  <th>디폴트 값</th>
+                  <td><code>0</code></td>
+                  <td><code>len(변수명)</code></td>
+                  <td><code>1</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            슬라이싱의 결과로 새로운 객채가 생성되며, 변수에 저장하지 않으면
+            버려진다.
+          </p>
+          <p>
+            <code>시작_인덱스</code>가 <code>끝_인덱스</code>보다 크면 빈 객체가
+            생성된다.
+          </p>
+          <p>
+            <code>스텝</code>을 생략할 때,
+            <code>변수명[시작_인덱스:끝_인덱스]</code>의 형태로 사용할 수 있다.
+          </p>
+          <p>
+            <code>스텝</code>에 마이너스 값을 사용하면, 거꾸로 슬라이싱을 할 수
+            있다.
+          </p>
+          <br />
+          <pre>
+<code class="comment">#예제</code>
+<code>a = [0, 1, 2, 3, 4]</code>
+
+<code>b1 = a[:]</code><code class="comment">      #b1 = [0, 1, 2, 3, 4] => 전체 복사</code>
+<code>b2 = a[2:]</code><code class="comment">     #b2 = [2, 3, 4]       => a[2] 포함</code>
+<code>b3 = a[:2]</code><code class="comment">     #b3 = [0, 1]          => a[2] 불포함</code>
+
+<code class="comment">#마이너스</code>
+<code>c1 = a[-4:]</code><code class="comment">    #c1 = [0, 1, 2, 3, 4] => 전체 복사</code>
+<code>c2 = a[:-1]</code><code class="comment">    #c2 = [0, 1, 2, 3]    => a[-1] 불포함</code>
+<code>c3 = a[-3:-1]</code><code class="comment">  #c3 = [2, 3]</code>
+<code>c4 = a[-2:-3]</code><code class="comment">  #c4 = []              => 빈 리스트</code>
+
+<code class="comment">#스텝</code>
+<code>d1 = a[::-1]</code><code class="comment">   #d1 = [4, 3, 2, 1, 0] => 뒤집기</code>
+<code>d2 = a[::2]</code><code class="comment">    #d2 = [0, 2, 4]       => 짝수만</code>
+<code>d3 = a[1::2]</code><code class="comment">   #d3 = [1, 3]          => 홀수만</code>
+</pre>
+
+          <h3 id="type-boolean">불리언(Boolean)</h3>
+          <p>
+            참(<code>True</code>)과 거짓(<code>False</code>)을 나타내는
+            자료형이다
+          </p>
+          <br />
+          <li>변수 만들기</li>
+          <pre>
+<code class="comment">#직접 입력</code>
+<code>a = True</code>
+<code>b = False</code>
+
+<code class="comment">#연산의 결과</code>
+<code>c = 1 &gt; 2</code><code class="comment">                #비교 연산</code>
+<code>d = a or b</code><code class="comment">               #논리 연산</code>
+<code>d = name1 is name2</code><code class="comment">       #동일성 연산</code>
+<code>e = number in [1,2,3,4]</code><code class="comment">  #멤버쉽 연산</code>
+
+<code class="comment">#bool()</code>
+<code>f = bool(10)</code><code class="comment">  #True</code>
+<code>g = bool("")</code><code class="comment">  #False</code>
+</pre>
+          <br />
+          <li>자료형의 참과 거짓</li>
+          <p>
+            자료형의 대부분의 값은 참(<code>True</code>)으로 간주되지만, 아래의
+            값은 거짓(<code>False</code>)으로 간주된다.
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>자료형</th>
+                  <th>거짓(<code>False</code>)인 값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>문자열</td>
+                  <td><code>""</code></td>
+                </tr>
+                <tr>
+                  <td>숫자</td>
+                  <td><code>0</code></td>
+                </tr>
+                <tr>
+                  <td>리스트</td>
+                  <td><code>[]</code></td>
+                </tr>
+                <tr>
+                  <td>튜플</td>
+                  <td><code>()</code></td>
+                </tr>
+                <tr>
+                  <td>딕셔네리</td>
+                  <td><code>{}</code></td>
+                </tr>
+                <tr>
+                  <td>세트</td>
+                  <td><code>set()</code></td>
+                </tr>
+                <tr>
+                  <td>객체</td>
+                  <td><code>None</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>각 콜렉션 자료형의 비어있는 값은 거짓(<code>False</code>)이다.</p>
+          <p>객체의 경우,</p>
+          <p>
+            &nbsp;&nbsp;1. 클래스에 <code>__bool__()</code> 메서드를
+            정의하였다면, 우선적으로 <code>__bool__()</code>의 실행결과에 따른다
+          </p>
+          <p>
+            &nbsp;&nbsp;2. 클래스에 <code>__len__()</code> 메서드를
+            정의하였다면, <code>__len__()</code> 실행결과가 <code>0</code>이면
+            <code>False</code>, 그 외에는 <code>True</code>이다
+          </p>
+          <p>
+            &nbsp;&nbsp;3. 둘다 정의하지 않았다면, 항상 <code>True</code>로
+            간주된다
+          </p>
+        </article>
+        <article>
+          <h2 id="controls">제어문(Controls)</h2>
+          <h3 id="ctl-conditionals">조건문(Conditionals)</h3>
+          <p>조건문이란, 참과 거짓을 판단하는 문장을 말한다.</p>
+          <p>
+            불리언(Boolean)을 결과로 내는 연산 또는 함수가 조건문의
+            <code>조건</code>이 될 수 있다.
+          </p>
+          <p>
+            불리언(Boolean)이 아닌 자료형을 <code>조건</code>으로 사용하는 경우,
+            각 자료형에 정의된 참과 거짓을 판단하는 방법을 따른다.
+          </p>
+          <p>조건문의 <code>조건</code>으로 할당표현이 올 수도 있다.</p>
+          <p>
+            조건문은 <code>if</code>문 하나이었으나, 버전 3.10부터
+            <code>match</code>문이 추가되었다.
+          </p>
+          <br />
+          <li><code>if</code>문(if Statement)</li>
+          <pre>
+<code>if 조건1:</code><code class="comment">      #if문의 필수문장</code>
+<code>    실행문1-1</code><code class="comment">  #들어쓰기!!!</code>
+<code>    실행문1-2</code>
+<code>    ...</code>
+<code>elif 조건2:</code><code class="comment">    #다른 조건을 테스트</code>
+<code>    실행문2-1</code>
+<code>    실행문2-2</code>
+<code>    ...</code>
+<code>elif 조건3:</code><code class="comment">    #또다른 조건을 테스트</code>
+<code>    실행문3-1</code>
+<code>    실행문3-2</code>
+<code>    ...</code>
+<code>else:</code><code class="comment">          #위의 모든 조건이 False인 경우</code>
+<code>    실행문4-1</code>
+<code>    실행문4-2</code>
+<code>    ...</code>
+</pre>
+          <p><code>if</code>문의 <code>조건</code>은 실행조건을 의미한다.</p>
+          <p>
+            위에서부터 순서대로 조건을 테스트하고, 먼저 <code>True</code>가 되는
+            조건의 코드블락을 실행하며 뒤의 다른 조건들은 테스트 없이 무시된다.
+          </p>
+          <p>
+            <code>elif</code>와 <code>else</code>는 필요없는 경우 생략할 수
+            있다.
+          </p>
+          <p>
+            <code>else</code>가 생략된 경우, 모든 조건이 <code>False</code>이면
+            아무것도 실행되지 않는다.
+          </p>
+          <p>
+            <code>if</code>와 <code>else</code>는 한번만 사용할 수 있지만,
+            <code>elif</code>의 수에는 제한이 없다.
+          </p>
+          <br />
+          <li>축약형 <code>if</code>문</li>
+          <pre>
+<code>if 조건1: 실행문1</code>
+<code>elif 조건2: 실행문2</code>
+<code>elif 조건3: 실행문3</code>
+<code>else: 실행문4</code>
+</pre>
+          <p>
+            실행문이 한 줄인 경우, 조건과 <code>:</code>에 이어서 줄바꿈 없이
+            바로 실행문을 쓸 수 있다.
+          </p>
+          <br />
+          <li>
+            조건표현(Conditional Expression)
+            <pre><code>실행문(참) if 조건 else 실행문(거짓)</code></pre>
+            <p>
+              조건이 참이면 <code>실행문(참)</code>을, 거짓이면
+              <code>실행문(거짓)</code>을 실행한다.
+            </p>
+            <p>조건표현의 <code>조건</code>은 선택조건을 의미한다.</p>
+            <ul>
+              <li><code>if</code>문과 조건표현의 차이</li>
+              <p>1. 조건표현에는 <code>:</code>이 없다.</p>
+              <p>2. 조건표현은 반드시 한줄이어야 한다.</p>
+              <p>3. 조건표현은 연산자로 사용할 수 있다.</p>
+            </ul>
+            <pre>
+<code class="comment">#예제</code>
+<code>print(a) if a &gt; b else print(b)</code>
+<code class="comment">#a가 b보다 크면 a를 출력하고 아니면 b를 출력</code>
+
+<code class="comment">#연산자로 사용</code>
+<code>ok = "같다" if a == b else "다르다"</code>
+<code class="comment">#a와 b가 같으면 "같다"를 아니면 "다르다"를 변수 ok에 저장</code>
+</pre>
+          </li>
+          <br />
+          <li>
+            <code>match</code>문(match Statement) [버전 3.10 부터 사용가능]
+          </li>
+          <pre>
+<code>match 매칭대상:</code>
+<code>    case 패턴1 if 조건1:</code><code class="comment">  #들어쓰기!!!</code>
+<code>        실행문1-1</code><code class="comment">         #들어쓰기 추가</code>
+<code>        실행문1-2</code>
+<code>    ...</code>
+<code>    case 패턴2 if 조건2:</code><code class="comment">  #다른 패턴과 매칭 테스트</code>
+<code>        실행문2-1</code>
+<code>        실행문2-2</code>
+<code>    ...</code>
+<code>    case 패턴3 if 조건3:</code><code class="comment">  #또다른 패턴과 매칭 테스트</code>
+<code>        실행문3-1</code>
+<code>        실행문3-2</code>
+<code>    ...</code>
+<code>    case _:</code><code class="comment">              #위의 모든 패턴과 매칭에 실패한 경우, 무조건 매칭</code>
+<code>        실행문4-1</code>
+<code>        실행문4-2</code>
+<code>    ...</code>
+</pre>
+          <p>
+            <code>match</code>문은 <code>매칭대상</code>과 <code>패턴</code>을
+            비교하여 매칭이 일어나는 <code>case</code>의 코드블락을 실행시키는
+            조건문이다.
+          </p>
+          <p><code>case</code>의 수에는 제한이 없다.</p>
+          <br />
+          <li>
+            <code>match</code>문의 가드
+            <ul>
+              <li>
+                <code>match</code>문의 <code>if 조건</code>을 "가드"라고 말한다.
+              </li>
+              <li>
+                가드는 <code>패턴</code>이 매칭에 성공하라도 코드블락의 실행을
+                막아야 하는 경우에 사용한다.
+              </li>
+              <li>필요 없으면 생략할 수 있다.</li>
+              <li>
+                <code>match</code>문의 <code>조건</code>은 실행조건을 의미한다.
+              </li>
+              <li>
+                어느 <code>패턴</code>이 <code>매칭대상</code>과 매칭에
+                성공하면, 조건을 테스트하여 <code>True</code>인 경우에만
+                <code>case</code>의 코드블락을 실행한다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <code>패턴</code> 내의 변수명
+            <ul>
+              <li>
+                <code>패턴</code> 안에는 변수가 포함될 수 있다. 이때, 변수가
+                있는 부분은 매칭이 되는 것으로 본다.
+              </li>
+              <li>
+                최종적으로 매칭에 성공하면, 실행문이 실행되기 전에
+                <code>패턴</code>의 내의 변수에 <code>매칭대상</code>의 해당
+                부분 값이 변수에 저장된다.
+              </li>
+            </ul>
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+<code>flag = False</code><code class="comment">                                #flag는 가드</code>
+<code>target = (100, 200)</code><code class="comment">                         #target은 매칭대상</code>
+<code>match target:</code><code class="comment">                               #(100,200)과 매칭돠는 패턴을 찾기</code>
+<code>    case (100, 300):</code><code class="comment">                        #매칭 실패: 200 != 300 </code>
+<code>        print("Case 1")</code>
+<code>    case (100, 200) if flag:</code><code class="comment">                #매칭 성공, 하지만 가드가 실행을 막음</code>
+<code>        print("Case 2")</code>
+<code>    case (100, y):</code><code class="comment">                          #매칭 성공, y에 200이 저장됨</code>
+<code>        print(f"Case 3, y: {y}")</code><code class="comment">            #이 라인이 실행됨</code>
+<code>    case _:</code><code class="comment">                                 #매칭 성공 이후의 모든 case는 무시됨</code>
+<code>        print("Case 4, 디폴트 케이스!")</code>
+<code class="comment">#결과: 'Case 3, y: 200'</code>
+</pre>
+
+          <h3 id="ctl-assign-exp">할당표현(Assignment Expression)</h3>
+          <pre><code>변수명 := 연산(또는 함수 등)</code></pre>
+          <br />
+          <li>
+            할당표현은 <code>:=</code>을 사용하여 할당연산을 다른 문장 내에서
+            사용할 수 있게 한다.
+            <ul>
+              <li>
+                <code>if</code>문의 <code>조건</code>으로 할당표현을 사용할 수
+                있다.
+              </li>
+              <li>
+                <code>match</code>문의 <code>매칭대상</code>,
+                <code>조건</code>으로 할당표현을 사용할 수 있다.
+              </li>
+              <li>
+                <code>while</code>문의 <code>조건</code>으로 할당표현을 사용할
+                수 있다.
+              </li>
+            </ul>
+          </li>
+          <pre>
+<code class="comment">#예제(if문)</code>
+<code>a=[1,2,3]</code>
+<code>if b := len(a):</code><code class="comment">           #변수 a의 길이를 변수 b에 저장</code>
+<code>    print(f"길이: {b}")</code><code class="comment">   #변수 b가 0이 아닌 경우 실행</code>
+<code>else:</code>
+<code>    print("비어있음")</code><code class="comment">     #변수 b가 0인 경우 실행</code>
+<code>print(f"변수 b 값: {b}")</code><code class="comment">  #if문 이후에도 변수 b를 계속 사용할 수 있다</code>
+</pre>
+
+          <h3 id="ctl-loops">반복문(Loops)</h3>
+          <li><code>while</code>문</li>
+          <pre>
+<code>while 조건:</code><code class="comment">    #조건이 True인 동안 반복</code>
+<code>    실행문1-1</code><code class="comment">  #들여쓰기!!!</code>
+<code>    실행문1-2</code>
+<code>    ...</code>
+<code>else:</code><code class="comment">          #조건이 False이면 실행</code>
+<code>    실행문2-1</code>
+<code>    실행문2-2</code>
+<code>    ...</code>
+</pre>
+          <p><code>while</code>문의 <code>조건</code>은 반복조건을 의미한다.</p>
+          <p>
+            <code>조건</code>이 <code>True</code>인 동안 <code>while</code>의
+            코드블락이 반복 실행된다.
+          </p>
+          <p>반복 종료 논리에 오류가 있다면, 무한반복 될 수 있다.</p>
+          <p>
+            <code>else</code>의 코드블락은 <code>조건</code>이
+            <code>False</code>인 경우, 딱 한번 실행된다.
+          </p>
+          <p>
+            <code>else</code>의 코드블락은 반복이 <code>break</code>키워드로
+            종료된 경우, 실행되지 않는다.
+          </p>
+          <br />
+          <li><code>for</code>문</li>
+          <pre>
+<code>for 변수명 in 반복대상:</code><code class="comment">  #반복대상에서 하나씩 꺼내와 변수에 저장</code>
+<code>    실행문1-1</code><code class="comment">           #들여쓰기!!!</code>
+<code>    실행문1-2</code>
+<code>    ...</code>
+<code>else:</code><code class="comment">                   #반복이 완료되면 실행</code>
+<code>    실행문2-1</code>
+<code>    실행문2-2</code>
+<code>    ...</code>
+</pre>
+          <p>
+            <code>for</code>문은 반복가능(iterable) 자료형의 모든 요소를 하나씩
+            꺼내어 변수에 저장한 후, 동일한 작업을 반복적으로 수행하는
+            반복문이다.
+          </p>
+          <p>
+            <code>반복대상</code>이란, 반복가능 자료형으로 리스트, 튜플,
+            딕셔네리, 세트, 문자열, 반복가능 객체를 말한다.
+          </p>
+          <p>
+            <code>반복대상</code>의 모든 요소를 전부 꺼내어 마지막에 이르면,
+            반복이 완료되어 종료된다.
+          </p>
+          <p>
+            <code>else</code>의 코드블락은 반복이 완료된 경우, 딱 한번 실행된다.
+          </p>
+          <p>
+            <code>else</code>의 코드블락은 반복이 <code>break</code>키워드로
+            종료된 경우, 실행되지 않는다.
+          </p>
+          <p>
+            딕셔네리를 <code>반복대상</code>으로 한 경우, 변수에는 키 값만
+            하나씩 돌아가며 저장된다.
+          </p>
+          <br />
+          <p>
+            객체는 클래스에 반복자 프로토콜(iterator protocol)에 따라 아래의
+            메서드를 정의하여
+            <code>반복대상</code>으로 사용할 수 있다.
+          </p>
+          <p>
+            &nbsp;&nbsp;1. <code>__iter__()</code>를 정의하여
+            <code>return self</code>를 실행한다.
+          </p>
+          <p>
+            &nbsp;&nbsp;2. <code>__next__()</code>를 정의하여 반복논리를 만들고
+            그에 따라
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1) 다음 요소를
+            <code>return</code>하거나
+          </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 마지막에 도달하면
+            <code>raise StopIteration</code>을 실행한다.
+          </p>
+          <pre>
+<code class="comment">#예제</code>
+<code>class iterableObj:</code>
+<code>    def __init__(self, attr1, attr2, attr3):</code>
+<code>        self.attr1 = attr1</code>
+<code>        self.attr2 = attr2</code>
+<code>        self.attr3 = attr3</code>
+<code>        self._attr_num = 0</code><code class="comment">             #반복을 위한 비공개 속성</code>
+
+<code>    def __iter__(self):</code>
+<code>        return self</code>
+
+<code>    def __next__(self):</code>
+<code>        self._attr_num += 1</code><code class="comment">            #반복 순서 결정하기</code>
+<code>        match self._attr_num:</code><code class="comment">          #match문 사용</code>
+<code>            case 1: return self.attr1</code><code class="comment">  #속성을 돌아가며 반복</code>
+<code>            case 2: return self.attr2</code>
+<code>            case 3: return self.attr3</code>
+<code>            case _:</code><code class="comment">                    #반복완료</code>
+<code>                self._attr_num = 0</code><code class="comment">     #다음 반복을 위한 초기화</code>
+<code>                raise StopIteration</code>
+
+<code>obj = iterableObj(1, 2, 3)</code>
+<code>a = [attr for attr in obj]</code>
+<code>print(a)</code><code class="comment">                               #[1, 2, 3]</code>
+</pre>
+          <br />
+          <p>
+            <code>for</code>문 안에 <code>for</code>문을 넣으면, 다중 반복이
+            가능하다.
+          </p>
+          <pre>
+<code class="comment">#예제</code>
+<code>a = []</code>
+<code>for i in range(1, 5):</code><code class="comment">      #4회 반복, i는 1부터 4까지</code>
+<code>    for j in range(1, 3):</code><code class="comment">  #2회 반복, j는 1부터 2까지</code>
+<code>        a.append(i*j)</code>
+<code>print(a)</code><code class="comment">                   #[1, 2, 2, 4, 3, 6, 4, 8]</code>
+</pre>
+          <br />
+          <li>
+            <code>continue</code>와 <code>break</code>키워드
+            <ul>
+              <li>
+                이 두 키워드는 반복문의 실행문 내에서 반복을 제어하기 위한
+                키워드들이다.
+              </li>
+              <li>
+                <code>while</code>문과 <code>for</code>문의 실행문에서 사용된다.
+              </li>
+              <br />
+              <li>
+                <code>continue</code>키워드는 현재 진행중인 반복만을 중지하고,
+                다음 반복을 바로 시작하는 키워드이다.
+              </li>
+              <li>
+                즉, 실행문에서 <code>continue</code>키워드를 만나면, 그 뒷줄의
+                모든 실행문은 실행하지 않고, 바로 반복 중인 코드블락의 첫번째
+                줄로 돌아가 반복을 계속한다.
+              </li>
+              <br />
+              <li>
+                <code>break</code>키워드는 현재 진행중인 코드블락의 반복 전부를
+                중단하는 키워드이다.
+              </li>
+              <li>
+                실행문에서 <code>break</code>키워드를 만나면, 즉시 반복 중인
+                코드블락의 반복을 중단하고, 반복문 이후의 코드를 실행한다.
+              </li>
+              <li>
+                <code>break</code>키워드로 반복문이 종료되면,
+                <code>else</code>코드블락을 실행하지 않는다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            반복문과 특별히 자주 함께 사용되는 함수: <code>range()</code>
+            <pre>
+<code>range(끝숫자)</code>
+<code>range(시작숫자, 끝숫자)</code>
+<code>range(시작숫자, 끝숫자, 스텝)</code>
+</pre>
+            <ul>
+              <li>
+                <code>range()</code>는 정수형 숫자들을 시작숫자부터 끝숫자까지
+                차례로 출력하는 함수이다.
+              </li>
+              <li>
+                슬라이싱과 동일하게 시작숫자는 포함되고, 끝숫자는 포함되지
+                않는다.
+              </li>
+              <li>
+                끝숫자만을 인수로 입력하면 0부터 1씩 증가하며 끝숫자(불포함)까지
+                출력한다.
+              </li>
+              <li>시작숫자의 디폴트 값은 0, 스텝의 디폴트 값은 1이다.</li>
+            </ul>
+          </li>
+          <h3 id="ctl-list-compre">리스트 내포(List Comprehension)</h3>
+          <pre><code>[실행문 for 변수명 in 반복대상 if 조건]</code></pre>
+          <pre>
+<code class="comment">#리스트 내포는 아래 코드의 축약형이다</code>
+<code>a = []</code><code class="comment">                   #리스트를 저장할 변수</code>
+<code>for 변수명 in 반복대상:</code><code class="comment">   #for문</code>
+<code>    if 조건:</code><code class="comment">              #if문</code>
+<code>        a.append(실행문)</code><code class="comment">  #실행 결과를 리스트에 추가</code>
+
+<code class="comment">#한줄로</code>
+<code>for 변수명 in 반복대상: if 조건: a.append(실행문)</code>
+</pre>
+          <p>
+            리스트 내포는, 리스트를 생성하는 표현 내부에 반복표현을 내포하고
+            있는 것이다.
+          </p>
+          <li>
+            <code>반복대상</code>은 <code>for</code>문의 <code>반복대상</code>과
+            동일하다.
+          </li>
+          <li>
+            <code>변수명</code>은 <code>for</code>문의 <code>변수명</code>과
+            동일하다.
+          </li>
+          <li>
+            변수는 <code>실행문</code>과 <code>조건</code> 내에서 사용할 수
+            있다.
+          </li>
+          <br />
+          <li>
+            <code>조건</code>은 <code>if</code>문의 <code>조건</code>과
+            동일하다. 즉, 반복조건이 아니라 실행조건이다.
+          </li>
+          <li>조건이 <code>True</code>인 경우에만 실행문이 실행된다.</li>
+          <br />
+          <li>
+            <code>실행문</code>을 통해 <code>return</code>된 값은 리스트에
+            차례대로 저장된다.
+          </li>
+          <li>
+            <code>실행문</code>에 조건표현이 올 수도 있으며, 이 때 반복대상 뒤에
+            따라오는 <code>조건</code>과 착각하지 말 것
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+<code>a = [x*2 for x in range(5)]</code><code class="comment">         #a=>[0, 2, 4, 6, 8]</code>
+<code>b = [x*x for x in range(5) if x%2]</code><code class="comment">  #b=>[1, 9]</code>
+
+<code class="comment">#예제(조건표현과 함께)</code>
+<code>c = ["a" if x % 2 else "b" for x in range(10)]</code>
+<code class="comment">#c=>['b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a']</code>
+</pre>
+          <br />
+          <li>
+            다중 반복<br />
+            <p>
+              <code>for</code>문의 다중 반복을 리스트 내포에서도 구현할 수 있다.
+            </p>
+            <pre>
+<code>[실행문 for 변수명1 in 반복대상1 if 조건1</code>
+<code>        for 변수명2 in 반복대상2 if 조건2</code>
+<code>        ...                             ]</code>
+
+<code class="comment">#한줄로</code>
+<code>[실행문 for 변수명1 in 반복대상1 if 조건1 for 변수명2 in 반복대상2 if 조건2 ...]</code>
+</pre>
+            <ul>
+              <li>
+                <code>반복대상1</code>이 1차 반복이고, <code>반복대상2</code>은
+                2차 반복이며, 뒤로 갈 수록 내부로 들어가는 반복이 된다.
+              </li>
+              <li>모든 변수는 <code>실행문</code>에서 사용할 수 있다.</li>
+              <li>
+                <code>변수명1</code>은 <code>조건2</code>에서 사용할 수 있으나,
+                <code>변수명2</code>는 <code>조건1</code>에서 사용할 수 없다.
+              </li>
+              <li>
+                즉, 앞의 변수는 뒤의 <code>조건</code>에서 사용할 수 있으나,
+                뒤의 변수는 앞의 <code>조건</code>에서 사용할 수 없다.
+              </li>
+            </ul>
+            <pre>
+<code class="comment">#예제</code>
+<code>a = [x*y for x in range(1,4) for y in range(1,5)]</code>
+<code class="comment">#a=>[1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12]</code>
+</pre>
+          </li>
+        </article>
+        <article>
+          <h2 id="functions">함수(Functions)</h2>
+          <p>
+            함수는 인자를 입력받아, 실행문을 실행하고, 그 결과를 출력하는 것을
+            말한다.
+          </p>
+          <p>함수는 먼저 정의를 하고, 나중에 호출하여 사용한다.</p>
+          <p>
+            함수의 실행은 호출로 시작하고, 함수 내부의 실행문을 모두 실행하거나
+            <code>return</code>문을 통하여 종료된다.
+          </p>
+          <h3>함수의 정의(Definition)</h3>
+          <pre>
+<code>def 함수명(변수명1=디폴트값1, /, 변수명2=디폴트값2, *, 변수명3=디폴트값3, ...):</code>
+<code>    """설명글"""</code>
+<code>    실행문1</code>
+<code>    실행문2</code>
+<code>    ...</code>
+<code>    return 결과</code>
+</pre>
+          <p>
+            <code>함수명</code>은 보통 <code>변수명</code>과 동일하게
+            <code>snake_case</code> 스타일로 작명한다.
+          </p>
+          <p>
+            일반적으로 <code>함수명</code> 작명시, 동사형 단어로 시작하여 함수의
+            목적을 분명히 한다.
+          </p>
+          <h3 id="func-params">매개변수(Parameters)</h3>
+          <li>
+            매개변수란, 함수를 실행하기 필요한 입력값들을 정의한 것을 말한다.
+          </li>
+          <li>매개변수는 <code>변수명</code>을 통해 정의한다.</li>
+          <li>매개변수의 수에는 제한이 없다.</li>
+          <li>
+            매개변수가 없는 함수도 있다. 이때, <code>def 함수명():</code>의
+            형식으로 정의한다.
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+<code class="comment">#매개변수: id, name, grade, class_no</code>
+<code>def add_student(id, name, grade, class_no):</code>
+<code>    pass</code>
+</pre>
+          <br />
+          <li>
+            매개변수(Parameters)와 인자(Arguments)
+            <ul>
+              <li>
+                매개변수는 함수의 정의시 입력값들을 정의하기 위한
+                <code>변수명</code>을 지칭한다.
+              </li>
+              <li>
+                인자는 함수의 호출시 매개변수의 정의 따라 입력한 값을 지칭한다.
+              </li>
+              <li>
+                즉,
+                <strong
+                  >매개변수는 정의할 때, 인자는 호출할 때, 사용되는 변수</strong
+                >를 각각 가리키며, 동일한 대상을 지칭한다.
+              </li>
+              <li>
+                종종 매개변수와 인자는 실무상 혼용하여 사용되며, 실제로 동일한
+                대상을 가리키므로 문제삼지 말고 넚은 마음으로 양해할 것
+              </li>
+              <li>인자는 전달인자, 인수라는 이름으로 불리기도 한다.</li>
+              <li>
+                인자는 위치 인자와 키워드 인자로 구분된다.
+                <ul>
+                  <li>
+                    위치 인자: 그 위치에 따라 어떤 <code>변수명</code>에
+                    할달될지 정하는 인자
+                  </li>
+                  <li>
+                    키워드 인자: 위치와 관계 없이, <code>변수명=데이터</code>의
+                    형태로 입력되는 인자
+                  </li>
+                  <li>
+                    위치 전용 또는 키워드 전용이 아닌한, 어떤 방식으로도 인자를
+                    입력할 수 있다.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <pre>
+<code class="comment">#예제(정의)</code>
+<code>def add_student(id, name, grade, class_no):</code><code class="comment">            #매개변수</code>
+<code>    pass</code>
+
+<code class="comment">#예제(호출)</code>
+<code>add_student(123, "John", 4, 5)</code><code class="comment">                         #위치 인자 사용</code>
+<code>add_student(id=123, name="John", grade=4, class_no=5)</code><code class="comment">  #키워드 인자 사용</code>
+</pre>
+          </li>
+          <br />
+          <li>
+            위치 전용 매개변수
+            <ul>
+              <li>
+                특수문자 <code>/</code> 앞에 오는 매개변수들은 반드시 위치
+                인자로 입력해야 한다.
+              </li>
+            </ul>
+            <pre>
+<code class="comment">#예제</code>
+<code>def add_student1(id, name, /, grade, class_no):</code><code class="comment">  #위치 전용: id, name</code>
+<code>    pass</code>
+
+<code>def add_student2(id, name, grade, class_no, /):</code><code class="comment">  #위치 전용: id, name, grade, class_no</code>
+<code>    pass</code>
+
+<code>add_student1(123, "John", 4, class_no=5)</code><code class="comment">         #grade, class_no은 전용 설정 없음</code>
+<code>add_student2(123, "John", 4, 5)</code><code class="comment">                  #위치 인자만 허용</code>
+</pre>
+          </li>
+          <br />
+          <li>
+            키워드 전용 매개변수
+            <ul>
+              <li>
+                특수문자 <code>*</code> 뒤에 오는 매개변수들은 반드시 키워드
+                인자로 입력해야 한다.
+              </li>
+            </ul>
+            <pre>
+<code class="comment">#예제</code>
+<code>def add_student1(id, name, *, grade, class_no):</code><code class="comment">         #키워드 전용: grade, class_no</code>
+<code>    pass</code>
+
+<code>def add_student2(*, id, name, grade, class_no):</code><code class="comment">         #키워드 전용: id, name, grade, class_no</code>
+<code>    pass</code>
+
+<code>add_student1(123, name="John", grade=4, class_no=5)</code><code class="comment">     #id, name은 전용 설정 없음</code>
+<code>add_student2(id=123, name="John", grade=4, class_no=5)</code><code class="comment">  #키워드 인자만 허용</code>
+
+
+<code class="comment">#예제(복합)</code>
+<code>def add_student3(id, /, name, grade, *, class_no):</code>
+<code>    pass</code>
+
+<code class="comment">#위치 전용: id | 전용 설정 없음: name, grade | 키워드 전용: class_no</code>
+<code>add_student3(123, "John", grade=4, class_no=5)</code>
+</pre>
+          </li>
+
+          <h3 id="func-variadic">임의의 인자를 위한 매개변수</h3>
+          <pre>
+<code>def 함수명(변수명, *args, 키워드전용변수명, **kwargs):</code>
+<code>    pass</code>
+</pre>
+          <p>
+            함수를 정의하는 시점에서 특정할 수 없는 임의의 인자를 받기위한
+            특수한 매개변수를 정의할 수 있다.
+          </p>
+          <p>
+            변수명이 반드시 <code>args</code>, <code>kwargs</code>일 필요는
+            없으나, 보통 이렇게 쓴다.
+          </p>
+          <li>
+            종류
+            <ul>
+              <li>
+                <code>*args</code>: 임의의 <strong>위치 인자</strong>를 위한
+                매개변수
+              </li>
+              <li>
+                <code>**kwargs</code>: 임의의 <strong>키워드 인자</strong>를
+                위한 매개변수
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            변수명 바로 앞에 <code>*</code>, <code>**</code>을 붙여서 임의의
+            인자를 받는 매타변수임을 선언한다. (Packing의 의미임)
+          </li>
+          <li>
+            임의의 인자를 위한 매개변수는 위치 인자를 위해 1개, 키워드 인자를
+            위해 1개를 선언할 수 있다.
+          </li>
+          <li>
+            <code>*args</code>이후에는 키워드 전용
+            매개변수(<code>키워드전용변수명</code>)만 올 수 있다.
+          </li>
+          <li><code>args</code>는 함수 내부에서 리스트 자료형으로 주어진다.</li>
+          <li>
+            <code>kwargs</code>는 함수 내부에서 딕셔네리 자료형으로 주어진다.
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+<code>def add_student1(id, name, *args):</code><code class="comment">                              #args: 임의의 위치 인자</code>
+<code>    if args: print(args[0])</code><code class="comment">                                     #args가 비어있지 않다면, 첫번째 요소를 프린트</code>
+
+<code>def add_student2(id, name, **kwargs):</code><code class="comment">                           #kwargs: 임의의 키워드 인자</code>
+<code>    for key in kwargs:</code><code class="comment">                                          #kwargs key를 대상으로 반복</code>
+<code>        print(kwargs[key])</code><code class="comment">                                      #각 key의 해당 밸류를 프린트</code>
+
+<code>def add_student3(id, *args, grade, **kwargs):</code><code class="comment">                   #grade는 키워드 전용</code>
+<code>    if "class_no" in kwargs:</code><code class="comment">                                    #kwargs에 "class_no"가 포함되어 있다면</code>
+<code>        print(f"{id}: {args[0]} {grade}-{kwargs["class_no"]}")</code><code class="comment">  #프린트</code>
+<code>    else: print("Ooops")</code>
+
+<code>add_student1(123, "John", 4, 5)</code><code class="comment">                                 #결과: 4</code>
+<code>add_student2(123, "John", grade=4, class_no=5)</code><code class="comment">                  #결과: 5</code>
+<code>add_student3(123, "John", grade=4, class_no=5)</code><code class="comment">                  #결과: '123: John 4-5'</code>
+<code>add_student3(123, "John", grade=4, class_no1=5)</code><code class="comment">                 #결과: 'Ooops'</code>
+</pre>
+
+          <h3 id="func-return"><code>return</code>문</h3>
+          <pre><code>return 결과</code></pre>
+          <li>
+            함수 내부에서 실행문을 실행한 결과는 <code>return</code> 키워드를
+            사용하여 반환한다.
+          </li>
+          <li>반환할 것이 없으면 <code>return</code>문은 생략가능하다.</li>
+          <li>
+            <code>return</code>문의 위치와 상관없이 <code>return</code> 키워드를
+            만나면 함수의 실행은 종료된다.
+          </li>
+          <li>
+            결과 없이 <code>return</code> 키워드를 단독으로 사용할 수 있다.
+          </li>
+
+          <h3 id="func-calling">함수의 호출(Calling)</h3>
+          <pre>
+<code class="comment">#위치 인자 사용</code>
+<code>함수명(데이터1, 데이터2, ...)</code><code class="comment">                         #return 값이 없는 경우</code>
+<code>변수명 = 함수명(데이터1, 데이터2, ...)</code><code class="comment">                 #return 값이 있는 경우</code>
+
+<code class="comment">#키워드 인자 사용</code>
+<code>함수명(변수명1=데이터1, 변수명2=데이터2, ...)</code><code class="comment">          #return 값이 없는 경우</code>
+<code>변수명 = 함수명(변수명1=데이터1, 변수명2=데이터2, ...)</code><code class="comment">  #return 값이 있는 경우</code>
+</pre>
+          <li>
+            함수는 정의된 바에 따라 함수명에 <code>()</code>사용하여 호출한다.
+          </li>
+          <li>함수명에 이어 괄호 안에 정의된 바에 따라 인자들을 입력한다.</li>
+          <br />
+          <li>
+            위치 인자와 키워드 인자
+            <ul>
+              <li>
+                위치 인자: <code>변수명</code> 없이 <code>데이터</code>만
+                입력하는 인자
+              </li>
+              <li>키워드 인자: <code>변수명=데이터</code>으로 입력하는 인자</li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            필수 인자와 선택 인자
+            <ul>
+              <li>
+                필수 인자: 매개변수가 <code>디폴트값</code> 없이
+                <code>변수명</code>으로 정의된 인자
+              </li>
+              <li>
+                선택 인자: 매개변수가 <code>변수명=디폴트값</code>으로 정의된
+                인자
+              </li>
+              <br />
+              <li>필수 인자는 함수 호출시, 반드시 주어져야 하는 인자이다.</li>
+              <li>선택 인자는 함수 호출시, 생략가능한 인자이다.</li>
+              <li>선택 인자의 생략시, 자동으로 디폴트값이 할당된다.</li>
+            </ul>
+            <pre>
+<code class="comment">#예제</code>
+<code class="comment">#필수 인자: id, name | 선택 인자: type, dps, hp</code>
+<code>def create_character(id, name, type="user", *, dps=1000, hp=10000)</code>
+<code>    return {"id":id, "name":name, "type":type, "dps":dps, "hp":hp}</code>
+
+<code>user1 = create_character(1, "John")</code>
+<code class="comment">#user1 => {"id":1, "name":"John", "type":"user", "dps":1000, "hp":10000}</code>
+<code>user2 = create_character(2, "Alice", dps=2000)</code>
+<code class="comment">#user2 => {"id":2, "name":"Alice", "type":"user", "dps":2000, "hp":10000}</code>
+<code>user3 = create_character(3, "Bob", dps=2000, hp=20000)</code>
+<code class="comment">#user3 => {"id":3, "name":"Bob", "type":"user", "dps":2000, "hp":20000}</code>
+<code>monster1 = create_character(990, "Mon1", "npc")</code>
+<code class="comment">#monster1 => {"id":990, "name":"Mon1", "type":"npc", "dps":1000, "hp":10000}</code>
+<code>boss1 = create_character(9999, "Boss1", "boss", dps=100000, hp=10000000)</code>
+<code class="comment">#boss1 => {"id":9999, "name":"Boss1", "type":"boss", "dps":100000, "hp":10000000}</code>
+</pre>
+          </li>
+
+          <h3 id="func-inner-func">함수 내의 함수</h3>
+          <p>함수의 정의 안에서 또다른 함수를 정의할 수 있다.</p>
+          <pre>
+<code>def 외부함수명(외부매개변수):</code>
+<code>    def 내부함수명(내부매개변수):</code>
+<code>        내부실행문</code>
+<code>        ...</code>
+
+<code>    외부실행문</code>
+<code>    내부함수명(데이터)</code>
+<code>    ...</code>
+</pre>
+          <li>내부함수는 외부함수의 실행문에서만 사용할 수 있다.</li>
+          <li>고차함수(Higher Order Function)을 정의할 때 주로 사용한다.</li>
+
+          <h3 id="func-recursive">재귀 함수(Recursive Function)</h3>
+          <li>
+            재귀 함수란, 함수의 정의 안에서 정의 중인 함수를 호출하는 함수를
+            말한다.
+          </li>
+          <li>
+            재귀 함수는 복잡한 논리를 매우 간결하게 작성할 수 있다는 장점이
+            있다.
+          </li>
+          <li>그러나, 재귀 함수는 메모리를 더 많이 사용하는 경향이 있다.</li>
+          <li>
+            또한, 코드 실행속도를 저하시키는 등의 단점도 있으므로 사용시 주의가
+            필요하다.
+          </li>
+          <pre>
+<code>def 함수명(매개변수):</code>
+<code>    실행문</code>
+<code>    함수명(데이터)</code><code class="comment">  #이 부분이 재귀임</code>
+</pre>
+          <p>
+            현재 정의 중인 <code>함수명</code>을 호출하는 경우, 재귀함수가 된다.
+          </p>
+          <p>그 밖의 사항은 일반 함수의 규칙을 따른다.</p>
+          <pre>
+<code class="comment">#예제</code>
+<code>def factorial(n):</code>
+<code>    if n == 1:</code><code class="comment">                     #재귀 종료 조건</code>
+<code>        return 1</code>
+<code>    else:</code>
+<code>        return x * factorial(n-1)</code><code class="comment">  #재귀</code>
+
+<code>a = factorial(4)</code>
+<code class="comment">#결과: a => 4*3*2*1=24</code>
+</pre>
+
+          <h3 id="func-lambda">람다표현(Lambda Expression)</h3>
+          <li>람다표현은 함수를 한줄에 정의하는 축약형 표현이다.</li>
+          <li>
+            람다표현은 함수형 프로그래밍(Functional Programming)을 구현하기 위한
+            도구이다.
+          </li>
+          <li>람다표현은 무명(anonymous) 함수라고도 불린다.</li>
+          <br />
+          <pre>
+<code class="comment">#정의</code>
+<code>lambda 변수명1, 변수명2, ... : 실행문</code>
+<code>lambda 변수명1=디폴트값1, 변수명2=디폴트값2, ... : 실행문</code><code class="comment">  #디폴트값이 있는 경우</code>
+
+<code class="comment">#호출을 위해 람다표현을 변수에 저장</code>
+<code>함수명 = lambda 변수명1, 변수명2, ... : 실행문</code>
+
+<code class="comment">#호출</code>
+<code>함수명(데이터1, 데이터2, ...)</code><code class="comment">                 #위치 인자</code>
+<code>함수명(변수명1=데이터1, 변수명2=데이터2, ...)</code><code class="comment">  #키워드 인자</code>
+
+<code class="comment">#정의 즉시 호출(무명 호출)</code>
+<code>(lambda 변수명1, 변수명2, ... : 실행문)(데이터1, 데이터2, ...)</code>
+</pre>
+          <li>
+            <code>변수명</code>은 매개변수에 해당하며, 일반 함수와 동일한 규칙이
+            적용된다.
+          </li>
+          <li>
+            따라서, 매개변수가 없는 경우, <code>*args</code>,
+            <code>**kwargs</code>인 경우도 가능하다.
+          </li>
+          <li>
+            <code>실행문</code>은 내부에서 인자를 사용할 수 있으며, 단 1개의
+            <code>실행문</code>만을 정의할 수 있다.
+          </li>
+          <br />
+          <li>
+            람다표현을 변수에 저장하여 그 변수의 이름을 <code>함수명</code>으로
+            하여 호출할 수 있다.
+          </li>
+          <li>
+            람다표현은 정의 즉시 호출하여 사용할 수 있다. 이때,
+            <code>(람다표현)(인자값)</code> 형식을 사용한다.
+          </li>
+          <li>람다표현의 호출시 인자는 일반 함수와 동일한 규칙이 적용된다.</li>
+          <br />
+          <li>
+            <code>실행문</code>의 결과값은 자동으로 <code>return</code>된다.
+          </li>
+          <li>
+            만약 결과값이 없다면 <code>None</code>이 <code>return</code>된다.
+          </li>
+          <li>
+            <code>실행문</code>에는 <code>return</code>, <code>raise</code>,
+            <code>assert</code>, <code>pass</code> 키워드를 사용할 수 없다.
+          </li>
+          <pre>
+<code class="comment">#예제(변수에 저장하여 호출)</code>
+<code>a = lambda x: x*x</code><code class="comment">         #제곱</code>
+<code>print(a(3))</code><code class="comment">               #결과: 9</code>
+
+<code>b = lambda x, y: 2*x + y</code><code class="comment">  #수식(2*x + y)</code>
+<code>print(b(3, 2))</code><code class="comment">            #결과: 8</code>
+
+<code class="comment">#예제(즉시 호출)</code>
+<code>print((lambda x, y: f"{x}학년 {y}반")(1,2))</code>
+<code class="comment">#결과: '1학년 2반'</code>
+</pre>
+
+          <h3 id="func-input">입력(Input) 함수</h3>
+          <p>
+            <code>input()</code>함수는 터미널에서 사용자의 키보드 입력을 받아
+            문자열로 반환하는 빌트인(built-in) 함수이다.
+          </p>
+          <pre><code>변수명 = input("입력요청")</code></pre>
+          <li>
+            <code>입력요청</code>에는 사용자의 입력을 요청하는 내용의 문자열
+            또는 문자열 블락을 사용한다.
+          </li>
+          <li><code>input()</code>의 결과는 문자열이다.</li>
+          <li>
+            따라서, 숫자를 입력 받았을 때 숫자문자를 숫자로 변환시켜야 한다.
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+<code>ans = input("가장 좋아하는 숫자를 입력하세요 : ")</code>
+<code>ans_num = int(ans)</code><code class="comment">  #정수로 변환</code>
+</pre>
+
+          <h3 id="func-files">파일(Files) 읽고 쓰기</h3>
+          <p>
+            <code>open()</code>함수는 파일을 열어 읽거나 쓰기 위해 사용하는
+            함수이다.
+          </p>
+          <p>파일을 열땐 <code>with</code> 키워드를 사용할 것을 강력 추천</p>
+          <p>
+            파일이 열린 시간을 최소화할 수 있도록 코드를 작성할 것을 강력 추천
+          </p>
+          <p>
+            즉, 파일을 열었을 땐 읽기 또는 쓰기 등의 파일과 관련된 작업만 하고,
+            파일과 무관한 것은 사전 또는 사후에 할 것
+          </p>
+          <p>
+            <a
+              href="https://docs.python.org/ko/3/library/functions.html#open"
+              target="_blank"
+              rel="noopener noreferrer"
+              >파이썬 문서 보기: <code>open()</code></a
+            >
+          </p>
+          <pre>
+<code class="comment">#단독으로 열기</code>
+<code>f = open("파일명", "모드")</code>
+<code>실행문</code>
+<code>f.close()</code>
+
+<code class="comment">#with 키워드와 함께 열기</code>
+<code>with open("파일명", "모드") as f:</code>
+<code>    실행문</code>
+</pre>
+          <li>
+            <code>open()</code>함수로 열린 파일은 반드시
+            <code>close()</code>함수로 닫아야 한다.
+          </li>
+          <li>
+            열린 파일을 닫지 않으면, 매우 중대한 결함인 메모리 누수(memory leak)
+            현상이 발생한다.
+          </li>
+          <li>
+            <code>with</code> 키워드를 사용하여 파일을 열면, 코드블락이 끝나는
+            시점에 자동으로 파일을 닫으므로 <code>close()</code>를 할 필요가
+            없다.
+          </li>
+          <br />
+          <li>
+            파일명
+            <pre><code>"파일경로/파일이름.확장자"</code></pre>
+            <ul>
+              <li><code>파일명</code>은 문자열이어야 한다.</li>
+              <li>
+                <code>파일명</code>은 대상파일이 위치한 경로와 확장자를
+                포함한다.
+              </li>
+              <li>
+                <code>파일경로</code> 안에서 상/하위 디렉토리를 구분하는
+                특수문자로 <code>/</code>(슬래쉬)를 사용할 것을 추천
+              </li>
+              <li>
+                <code>파일경로</code>는 상대적 경로를 사용하는 경우, 생략할 수
+                있다.
+              </li>
+              <li>
+                <code>확장자</code> 앞에 있는 <code>.</code>도 반드시 포함시켜야
+                한다.
+              </li>
+              <li>
+                파일이 존재하지 않는 경우, 모드에 따라 새파일을 생성하거나
+                에러를 발생시킨다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            파일모드
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th><code>r</code></th>
+                    <th><code>r+</code></th>
+                    <th><code>w</code></th>
+                    <th><code>w+</code></th>
+                    <th><code>a</code></th>
+                    <th><code>a+</code></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>read()<br />readline()<br />readlines()</th>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td></td>
+                    <td>&check;</td>
+                    <td></td>
+                    <td>&check;</td>
+                  </tr>
+                  <tr>
+                    <th>write()</th>
+                    <td></td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                  </tr>
+                  <tr>
+                    <th>seek() 후에 write()</th>
+                    <td></td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>새파일 생성</th>
+                    <td></td>
+                    <td></td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                  </tr>
+                  <tr>
+                    <th>기존 내용 삭제</th>
+                    <td></td>
+                    <td></td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>시작 위치부터</th>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>끝 위치부터</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>&check;</td>
+                    <td>&check;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              <code>t</code>(텍스트), <code>b</code>(바이너리)는 위의 읽기/쓰기
+              모드 뒤에 추가하여 사용할 수 있다.
+            </p>
+            <p>디폴트값은 <code>rt</code>이며 의미는 텍스트 읽기이다.</p>
+          </li>
+
+          <h3 id="func-docstring">설명글(Docstring)</h3>
+          <li>
+            <code>설명글</code>(Docstring)이란, 간략한 설명을 포함하는 문자열
+            블락이다.
+          </li>
+          <li>
+            <code>help(함수명)</code>을 사용하면 <code>설명글</code>이 출력된다.
+          </li>
+          <li>
+            <code>설명글</code>은 함수 뿐만 아니라, 클래스, 메서드, 모듈,
+            패키지에서도 사용된다.
+          </li>
+          <li>
+            함수의 경우, 함수의 역할, 매타변수의 타입과 짧은 설명,
+            <code>return</code>타입, 발생할 수 있는 에러 타입 등을 설명한다.
+          </li>
+          <pre>
+<code class="comment">#예제(reStructuredText(reST) 스타일)</code>
+<code>def gcd(a, b):</code>
+<code>    """Euclidean algorithm으로 최대공약수(GCD)를 찾는다.</code>
+
+<code>    :param a: 첫번째 숫자</code>
+<code>    :param b: 두번째 숫자</code>
+<code>    :type a: int</code>
+<code>    :type b: int</code>
+<code>    :returns: a와 b의 최대공약수</code>
+<code>    :rtype: int</code>
+<code>    """</code>
+<code>    pass</code>
+    
+<code class="comment">#예제(한줄 스타일)</code>
+<code>def gcd(a, b):</code>
+<code>    """두 정수의 최대공약수(GCD)를 Euclidean algorithm으로 찾아 반환한다."""</code>
+<code>    pass</code>
+</pre>
+        </article>
+        <article>
+          <h2 id="classes">클래스(Classes)</h2>
+          <p>
+            파이썬은 객체 지향 프로그래밍(Object-Oriented Programming(OOP))
+            언어이다.
+          </p>
+          <p>파이썬의 대부분은 객체로 이루어져 있다.</p>
+          <h3 id="class-concepts">개념(Concepts)</h3>
+          <li>
+            클래스(Classes)
+            <ul>
+              <li>
+                클래스란, 그 속성과 행동이 다른 그룹과 구별되는 공통점이 있어
+                묶어놓은 그룹을 말한다.
+              </li>
+              <li>클래스는 객체를 생성하기 위한 설계도와 같은 역할을 한다.</li>
+              <br />
+              <li>클래스는 사용자 정의 자료형에 해당된다.</li>
+              <li>클래스는 추상적이며 개념적이다.</li>
+            </ul>
+          </li>
+          <li>
+            객체(Objects)
+            <ul>
+              <li>
+                객체란, 소속된 클래스의 다른 객체와 구별되어 독립적으로 존재하는
+                것을 말한다.
+              </li>
+              <li>객체는 클래스의 인스턴스(하나의 경우)이다.</li>
+              <li>
+                즉, 객체는 설계도에 따라 만들어진 하나의 제품 같은 것이다.
+              </li>
+              <br />
+              <li>
+                클래스에 따라 데이터가 생성되어 컴퓨터 메모리의 물리적 공간에
+                저장될 때 객체는 생성된다.
+              </li>
+              <li>따라서, 일반적으로 객체는 변수에 할당된다.</li>
+              <li>객체는 구체적이며 현실적이다.</li>
+            </ul>
+          </li>
+          <li>
+            속성(Attributes)과 메서드(Methods)
+            <ul>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>속성(Attributes)</th>
+                      <th>메서드(Methods)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>설명</th>
+                      <td>객체가 보유한 데이터</td>
+                      <td>객체가 자기 또는 다른 객체의 데이터를 처리하는 것</td>
+                    </tr>
+                    <tr>
+                      <th>의미</th>
+                      <td>객체의 상태</td>
+                      <td>객체의 동작</td>
+                    </tr>
+                    <tr>
+                      <th>구현방법</th>
+                      <td>변수</td>
+                      <td>함수</td>
+                    </tr>
+                    <tr>
+                      <th>클래스가 보유</th>
+                      <td>가능</td>
+                      <td>가능</td>
+                    </tr>
+                    <tr>
+                      <th>각 객체가 보유</th>
+                      <td>가능</td>
+                      <td>가능</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br />
+              <li>
+                속성(Attributes)과 특성(Property)은 의미가 비슷하여 혼용이
+                가능하지만, 특성(Property)이 좀더 넗은 개념이다.
+              </li>
+              <li>객체가 가진 특성(Property)을 속성(Attributes)이라 한다.</li>
+              <li>
+                클래스가 가진 속성(Attributes)을 특별히 클래스 변수(Class
+                Variable)라 한다.
+              </li>
+              <li>
+                속성과 메서드는 <code>.</code>(닷 연산자, 멤버 엑세스 연산자)를
+                통해 사용할 수 있다.
+              </li>
+              <li>
+                파이썬에는 비공개라는 개념이 존재하지 않는다. 즉, 모두 접근이
+                가능하다.
+              </li>
+              <li>
+                단지, 이름 앞에 <code>_</code> 1개가 붙어 있는 속성 및 메서드는
+                비공개처럼 다루기로 약속한 것이다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            상속(Inheritance)
+            <ul>
+              <li>
+                상속이란, 한 클래스가 다른 클래스의 속성과 메서드를 모두
+                이어받는 것을 말한다.
+              </li>
+              <li>
+                이때, 속성과 메서드를 전수해주는 클래스를 부모클래스라 하고,
+                이어받는 클래스를 자식클래스라 한다.
+              </li>
+              <li>부모클래스가 상위클래스이고, 자식클래스는 하위클래스이다.</li>
+              <li>
+                예를 들면, '포유류'는 '고양이'의 부모클래스(상위)이고, '동물'의
+                자식클래스(하위)이다.
+              </li>
+              <li>
+                따라서, '포유류'는 '동물'의 모든 속성과 동작을 가지고 있고,
+                '고양이'는 '포유류'의 모든 속성과 동작을 가지고 있다.
+              </li>
+              <li>
+                자식클래스로 갈 수록 부모클래스가 구체화되어 확장되는 개념이다.
+              </li>
+            </ul>
+          </li>
+          <h3 id="class-class"><code>class</code>문</h3>
+          <pre>
+<code>class 클래스명:</code>
+<code class="comment">#======== 클래스 ========</code>
+<code class="comment">    #클래스 변수</code>
+<code>    _변수명 = 데이터</code><code class="comment">  #클래스 비공개 변수</code>
+<code>    변수명 = 데이터</code><code class="comment">  #클래스 공개 변수</code>
+
+<code class="comment">    #클래스 메서드</code>
+<code>    @classmethod</code>
+<code>    def 메서드명(cls, 매개변수):</code>
+<code>        ...</code>
+<code>        print(cls.변수명)</code><code class="comment">  #클래스 변수 접근</code>
+
+<code class="comment">#======== 객 체 ========</code>
+<code class="comment">    #객체 초기화</code>
+<code>    def __init__(self, 매개변수):</code>
+<code>        self._속성명 = 데이터</code><code class="comment">  #객체 비공개 속성 초기화</code>
+<code>        self.속성명 = 데이터</code><code class="comment">  #객체 공개 속성 초기화</code>
+
+<code class="comment">    #객체 Setter</code>
+<code>    def set_속성명(self, 매개변수):</code>
+<code>        self.속성명 = 데이터</code><code class="comment">  #객체 속성 업데이트</code>
+
+<code class="comment">    #객체 Getter</code>
+<code>    def get_속성명(self, 매개변수):</code>
+<code>        return self.속성명</code><code class="comment">  #객체 속성 return</code>
+
+<code class="comment">    #객체 공개 메서드</code>
+<code>    def 메서드명(self, 매개변수):</code>
+<code>        ...</code>
+<code>        print(self.속성명)</code><code class="comment">  #객체 속성 접근</code>
+<code>        print(클래스명.변수명)</code><code class="comment">  #클래스 변수 접근</code>
+<code>        클래스명.메서드명(데이터)</code><code class="comment">  #클래스 메서드 호출</code>
+</pre>
+          <p>
+            <code>클래스명</code>은 보통 영문 <code>CamelCase</code> 스타일로
+            작명한다.
+          </p>
+          <p>
+            <code>속성명</code>은 변수와 동일하게 보통 <code>snake_case</code>
+            스타일로 작명한다.
+          </p>
+          <p>
+            <code>메서드명</code>은 함수와 동일하게 보통
+            <code>snake_case</code>스타일로 작명한다.
+          </p>
+          <h3 id="class-gen-and-del">객체의 생성과 삭제</h3>
+          <pre>
+<code>#생성</code>
+<code>객체명 = 클래스명(초기화데이터)</code>
+
+<code>#삭제</code>
+<code>del 객체명</code>
+</pre>
+          <li>객체는 <code>클래스명</code> + <code>()</code> 으로 생성한다.</li>
+          <li>
+            객체를 생성할 때, <code>()</code> 안에 클래스의
+            <code>__init__()</code>의 정의에 따라 초기화에 필요한 데이터를
+            입력한다.
+          </li>
+          <li>생성된 객체는 변수 <code>객체명</code>에 저장하여 사용한다.</li>
+          <li>
+            각 객체는 독립성이 있으므로 <code>객체명</code>은 서로 달라야 한다.
+          </li>
+          <br />
+          <li>
+            객체의 생명주기(Life Cycle)
+            <ul>
+              <li><code>클래스명()</code> : 클래스의 객체 생성자 호출</li>
+              <p class="chart-down-arrow">&darr;</p>
+              <li>
+                <code>__new__()</code> : 객체 생성 메서드 호출 (객체의 생성)
+              </li>
+              <p class="chart-down-arrow">&darr;</p>
+              <li><code>__init__()</code> : 객체 초기화 메서드 호출</li>
+              <p class="chart-down-arrow">&darr;</p>
+              <li>객체의 사용</li>
+              <p class="chart-down-arrow">&darr;</p>
+              <li><code>del 객체명</code> : 객체 삭제문 실행</li>
+              <p class="chart-down-arrow">&darr;</p>
+              <li><code>__del__()</code> : 삭제 전처리 메서드 호출</li>
+              <p class="chart-down-arrow">&darr;</p>
+              <li>객체의 삭제</li>
+            </ul>
+          </li>
+
+          <h3 id="class-object-member">객체 속성과 메서드</h3>
+          <li>
+            <code>class</code>문 <strong>내부에서</strong> 객체 속성과 메서드
+            사용
+            <pre>
+<code>class 클래스명:</code>
+<code>    def 메서드명1(self, 매개변수):</code><code class="comment">  #self => 객체</code>
+
+<code>        self._속성명</code><code class="comment">               #객체의 비공개 속성에 접근</code>
+<code>        self.속성명</code><code class="comment">                #객체의 공개 속성에 접근</code>
+<code>        self._메서드명(데이터)</code><code class="comment">      #객체의 비공개 메서드 호출</code>
+<code>        self.메서드명2(데이터)</code><code class="comment">      #객체의 다른 메서드 호출</code>
+</pre>
+            <ul>
+              <li>
+                객체는 매개변수 <code>self</code>를 통하여 메서드 내부에
+                전달된다
+              </li>
+              <li>
+                <code>self</code>는 키워드가 아니고 변수명일 뿐이다. 그러나 보통
+                <code>self</code>로 한다.
+              </li>
+              <li>
+                <code>self</code> + <code>.</code>(닷 연산자)로 객체의 속성과
+                메서드를 사용할 수 있다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <code>class</code>문 <strong>외부에서</strong> 객체 속성과 메서드
+            사용
+            <pre>
+<code>객체명 = 클래스명(초기화데이터)</code><code class="comment">  #객체 생성</code>
+
+<code>객체명.속성명</code><code class="comment">                   #객체의 속성에 접근</code>
+<code>객체명.메서드명(데이터)</code><code class="comment">          #객체의 메서드 호출</code>
+</pre>
+            <ul>
+              <li>
+                객체는 변수 <code>객체명</code>에 저장되고, 그 변수를 통하여
+                사용한다.
+              </li>
+              <li>
+                <code>객체명</code> + <code>.</code>(닷 연산자)로 객체 속성과
+                메서드를 사용할 수 있다.
+              </li>
+              <li>
+                객체의 비공개 속성 또는 비공개 메서드는 <code>class</code>문
+                외부에서 사용하지 않기로 한다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            비공개 속성과 메서드
+            <ul>
+              <li>파이썬에는 비공개라는 개념이 존재하지 않는다.</li>
+              <li>
+                하지만, 속성과 메서드의 이름 앞에 붙는 <code>_</code>에 따라
+                특별하게 다룬다.
+              </li>
+              <li>
+                <code>_</code>를 1개 붙여 <code>_속성명</code>과 같이 하면,
+                아무일도 일어나지 않는다. 단지, 비공개로 다루기로 약속한다.
+              </li>
+              <br />
+              <li>
+                <code>_</code>를 2개 붙여 <code>__속성명</code>과 같이 하면,
+                파이썬의 '이름 썩기 알고리즘'이 작동된다.
+              </li>
+              <li>
+                '이름 썩기 알고리즘'은 <code>__속성명</code>을
+                <code>_클래스명__속성명</code>으로 바꾸어 준다.
+              </li>
+              <li>이름이 바뀌기 때문에 좀더 비공개인 것처럼 느껴지게 된다.</li>
+              <li>
+                하지만, '이름 썩기 알고리즘'은 속성을 비공개하기 위해 존재하는
+                알고리즘이 아니며, 바뀐 이름을 알고 있다면 접근이 가능하다.
+              </li>
+              <li>
+                '이름 썩기 알고리즘'은 상속시 상/하위 클래스간 이름의 충돌을
+                방지하기 위한 알고리즘이다.
+              </li>
+            </ul>
+          </li>
+
+          <h3 id="class-class-member">클래스 변수와 메서드</h3>
+          <li>
+            객체처럼 <code>.</code>(닷 연산자)로 클래스 변수와 메서드를 사용할
+            수 있다.
+          </li>
+          <li>
+            다만, 아래와 같이 경우에 따라 <code>.</code>(닷 연산자)의 대상
+            달라진다.
+          </li>
+          <br />
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2" rowspan="2">사용위치</th>
+                  <th colspan="2">클래스 변수 접근</th>
+                  <th colspan="2">클래스 메서드 호출</th>
+                </tr>
+                <tr>
+                  <th>비공개</th>
+                  <th>공개</th>
+                  <th>비공개</th>
+                  <th>공개</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2"><code>class</code>문 내부</td>
+                  <td>클래스 메서드 정의 내부</td>
+                  <td><code>cls._변수명</code></td>
+                  <td><code>cls.변수명</code></td>
+                  <td><code>cls._메서드명(데이터)</code></td>
+                  <td><code>cls.메서드명(데이터)</code></td>
+                </tr>
+                <tr>
+                  <td>객체 메서드 정의 내부</td>
+                  <td><code>클래스명._변수명</code></td>
+                  <td><code>클래스명.변수명</code></td>
+                  <td><code>클래스명._메서드명(데이터)</code></td>
+                  <td><code>클래스명.메서드명(데이터)</code></td>
+                </tr>
+                <tr>
+                  <td><code>class</code>문 외부</td>
+                  <td></td>
+                  <td>사용 &cross;</td>
+                  <td><code>클래스명.변수명</code></td>
+                  <td>사용 &cross;</td>
+                  <td><code>클래스명.메서드명(데이터)</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <code>cls</code>는 키워드가 아니고 변수명일 뿐이다. 그러나 보통
+            <code>cls</code>로 한다.
+          </p>
+
+          <h3 id="class-inherit">상속(Inheritance)</h3>
+          <pre>
+<code>class 자식클래스명(부모클래스명):</code>
+<code>    pass</code>
+</pre>
+          <li>
+            자식클래스는 부모클래스가 정의하고 있는 속성과 메서드를 별도로
+            정의하지 않아도 이미 모두 포함하고 있다.
+          </li>
+          <br />
+          <li>
+            <code>super()</code> 함수
+            <ul>
+              <li>
+                <code>super()</code>는 자식클래스의 <code>class</code>문 내에서
+                호출할 수 있다.
+              </li>
+              <li>
+                <code>super()</code>는 부모클래스를 <code>return</code>한다.
+              </li>
+              <li>
+                자식클래스가 오버라이딩한 메서드가 아닌 부모클래스의 메서드를
+                사용코자 할 때 사용하는 함수이다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            메서드 오버라이딩(Method Overriding)
+            <ul>
+              <li>
+                메서드 오버라이딩이란, 자식클래스가 부모클래스의 메서드를
+                재정의하는 것을 말한다.
+              </li>
+              <li><code>메서드명</code>이 부모클래스와 동일해야 한다.</li>
+              <li><code>매개변수</code>는 부모클래스와 다를 수 있다.</li>
+              <br />
+              <li>
+                자식클래스가 새로운 행위를 하는 것이 아니라, 부모클래스의 행위를
+                변형시켜 하는 경우를 구현한 것이다.
+              </li>
+              <li>
+                즉, 자식클래스가 부모클래스가 하지 않는 새로운 행위를 한다면, 새
+                메서드를 추가하여 구현한다.
+              </li>
+              <li>
+                하지만, 자식클래스가 부모클래스가 하는 행위를 변형시켜 한다면,
+                메서드 오버라이딩을 하여 구현한다.
+              </li>
+            </ul>
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+<code>class Person:</code><code class="comment">                                  #부모클래스</code>
+<code>    def __init__(self, name, age):</code>
+<code>        self.name = name</code>
+<code>        self.age = age</code>
+
+<code>    def greeting():</code>
+<code>        print("Hi")</code>
+
+<code>class Student(Person):</code><code class="comment">                         #자식클래스1</code>
+<code>    def __init__(self, name, age, class_num):</code><code class="comment">  #메서드 오버라이딩</code>
+<code>        super().__init__(name, age)</code><code class="comment">            #부모클래스 메서드 호출</code>
+<code>        self.class_num = class_num</code><code class="comment">             #속성 추가</code>
+
+<code>    def study(subject):</code><code class="comment">                        #메서드 추가</code>
+<code>        print(f"Studying {subject}")</code>
+
+<code>class Teacher(Person):</code><code class="comment">                         #자식클래스2</code>
+<code>    def __init__(self, name, age, subject):</code><code class="comment">    #메서드 오버라이딩</code>
+<code>        super().__init__(name, age)</code><code class="comment">            #부모클래스 메서드 호출</code>
+<code>        self.subject = subject</code><code class="comment">                 #속성 추가</code>
+
+<code>    def greeting(to_whome="Everyone"):</code><code class="comment">         #메서드 오버라이딩</code>
+<code>        print(f"Hi {to_whome}")</code>
+
+<code>    def teach():</code><code class="comment">                               #메서드 추가</code>
+<code>        print(f"Teaching {self.subject}")</code>
+</pre>
+          <br />
+          <li>
+            메서드 오버로딩(Method Overloading)
+            <ul>
+              <li>
+                메서드 오버로딩이란, 한 클래스 내에서 같은 이름의 메서드를
+                매개변수의 수와 타입을 달리하여 여러개 정의하는 것을 말한다.
+              </li>
+              <br />
+              <li>
+                엄밀히 말하면, 파이썬은 메서드 오버로딩을 지원하지 않는다.
+              </li>
+              <li>
+                같은 이름의 메서드를 여러개 정의하면, 가장 마지막에 정의된
+                메서드만을 실행하기 때문이다.
+              </li>
+              <br />
+              <li>
+                하지만, 파이썬은
+                <ul>
+                  <li>
+                    메서드 정의시 매개변수의 자료형을 특정하지 않는다. 즉,
+                    매개변수가 동적변수이다.
+                  </li>
+                  <li>
+                    디폴트값과 위치/키워드인자를 활용하여 다양한 형태의 함수
+                    호출이 가능하다.
+                  </li>
+                </ul>
+                따라서, 메서드 오버로딩과 비슷한 효과를 구현할 수 있다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            상속시 <code>속성명</code> 충돌 방지
+            <ul>
+              <li>
+                이름 앞에 <code>_</code> 2개를 붙여 <code>__속성명</code>으로
+                작명하면 파이썬의 '이름 썩기 알고리즘'이 작동한다.
+              </li>
+              <li>
+                '이름 썩기 알고리즘'은 <code>__속성명</code>을
+                <code>_클래스명__속성명</code>으로 바꾸어 충돌을 방지한다.
+              </li>
+              <li>
+                따라서, 자식클래스는 자기 속성을 <code>__속성명</code>으로
+                접근하고, 부모클래스의 속성을
+                <code>_부모클래스명__속성명</code>으로 접근할 수 있다.
+              </li>
+              <li>
+                자식클래스와 부모클래스가 동일한 이름의 속성을 각각 가져야할
+                필요가 있을 때 사용한다.
+              </li>
+            </ul>
+          </li>
+        </article>
+        <article>
+          <h2 id="modules">모듈(Modules)</h2>
+          <p>
+            모듈이란, 파이썬 파일을 말한다. 즉, <code>.py</code> 확장자를 가지고
+            있는 파일이 모듈이다.
+          </p>
+          <p>1개의 파이썬 파일이 1개의 모듈이다.</p>
+
+          <h3 id="module-create">만들기(Create)</h3>
+          <li>파이썬 코드를 작성하여, <code>모듈명.py</code>로 저장한다.</li>
+          <li>파이썬 파일이름과 <code>모듈명</code>은 동일하다.</li>
+          <li>
+            <code>모듈명</code>은 <code>snake_case</code> 스타일로 간결하게
+            작명한다.
+          </li>
+
+          <h3 id="module-import">가져오기(Import)</h3>
+          <p>
+            다른 파일에서 작성한 코드를 사용하려면, 우선 그 코드를 가져와야
+            한다.
+          </p>
+          <p>모듈은 <code>import</code>문으로 가져올 수 있다.</p>
+          <pre>
+<code class="comment">#모듈명으로 가져오기</code>
+<code>import 모듈명</code>
+
+<code class="comment">#가져온 코드 사용하기</code>
+<code>모듈명.변수명</code>
+<code>모듈명.함수명()</code>
+<code>객체명 = 모듈명.클래스명()</code>
+</pre>
+          <li>
+            <code>import</code>문은 가져와서 사용코자하는 코드보다 먼저 실행돼야
+            한다.
+          </li>
+          <li>보통, 모듈의 시작부분에 <code>import</code>문을 위치시킨다.</li>
+          <li>
+            가져온 코드는 객체처럼 <code>.</code>(닷 연산자)로 모듈의
+            멤버들(변수, 함수, 클래스)에게 접근하여 사용한다.
+          </li>
+          <li>
+            가져올 모듈이 그 코드를 사용할 모듈과 다른 디렉토리(폴더)에
+            저장되어있는 경우,
+            <a href="#package-import">패키지의 가져오기</a> 방법을 따라야 한다.
+          </li>
+
+          <h3 id="module-from-import">멤버 가져오기</h3>
+          <p>
+            <code>from-import</code>문으로 모듈의 멤버를 특정하여 가져올 수도
+            있다.
+          </p>
+          <pre>
+<code class="comment">#모듈의 멤버 가져오기</code>
+<code>from 모듈명 import 함수명</code><code class="comment">                   #1개만 특정하여</code>
+<code>from 모듈명 import 변수명, 함수명, 클래스명</code><code class="comment">  #여러개 (콤마로 구분)</code>
+<code>from 모듈명 import *</code><code class="comment">                       #전부 가져오기 (비추)</code>
+
+<code class="comment">#가져온 코드 사용하기</code>
+<code>변수명</code>
+<code>함수명()</code>
+<code>객체명 = 클래스명()</code>
+</pre>
+          <li>
+            <code>from-import</code>문은 '모듈' 자체를 가져오는 것이 아니라
+            특정된 일부만 가져오는 것이다.
+          </li>
+          <li>
+            대상모듈의 <code>변수명</code>, <code>함수명</code>,
+            <code>클래스명</code>으로 가져올 대상을 특정한다.
+          </li>
+          <li>
+            한 모듈에서 여러 멤버를 동시에 가져오는 경우 <code>,</code>로
+            구분하여 한 줄의 <code>import</code>문으로 축약할 수 있다.
+          </li>
+          <li>
+            가져올 모듈의 크기가 크고 방대한 경우, <code>import 모듈명</code>을
+            사용하는 것보다 코드의 로딩시간을 줄여 실행속도를 빠르게 할 수 있다.
+          </li>
+          <br />
+          <li>
+            가져온 코드는 <code>모듈명</code>과 <code>.</code>(닷 연산자) 없이
+            바로 <code>import</code>한 이름으로 사용한다.
+          </li>
+          <li>
+            따라서, 가져온 코드의 이름과 자기 모듈의 이름간에 충돌이 발생하지
+            않도록 주의하여야 한다.
+          </li>
+          <br />
+          <li>
+            <code>import *</code>를 사용하면 대상모듈에서 가져올 수 있는 코드를
+            모두 가져온다.
+          </li>
+          <li>
+            즉, 이름이 <code>_</code>로 시작하는 멤버들을 제외하고 전부
+            가져온다.
+          </li>
+          <br />
+          <li>
+            <code>import *</code>를 사용하여 가져오기는 아래와 같은 이유로
+            특별한 이유가 없는한 사용하지 말기를 추천
+            <ul>
+              <li>
+                자기 코드와 가져온 코드 간의 구별이 힘들어, 코드의 가독성이
+                떨어진다.
+              </li>
+              <li>
+                무엇을 가져왔는지 알기 힘들어, 이름 충돌이 일어날 확률이 매우
+                높다.
+              </li>
+              <li>
+                제3개발자와 자동화도구의 혼동을 초래해, 코드의 유지보수가
+                힘들다.
+              </li>
+              <li>
+                <code>import 모듈명</code>으로 가져오는 것과 로딩속도에 차이가
+                없다.
+              </li>
+            </ul>
+          </li>
+
+          <h3 id="module-as"><code>as</code> 키위드</h3>
+          <p><code>as</code> 키위드는 이름을 바꿔주는 키워드이다.</p>
+          <pre>
+<code class="comment">#모듈을 별명으로 가져오기</code>
+<code>import 모듈명 as 모듈별명</code>
+
+<code class="comment">#가져온 코드 사용하기</code>
+<code>모듈별명.변수명</code>
+<code>모듈별명.함수명()</code>
+<code>객체명 = 모듈별명.클래스명()</code>
+
+<code class="comment">#모듈의 멤버를 별명으로 가져오기</code>
+<code>from 모듈명 import 함수명 as 함수별명</code>
+<code>from 모듈명 import 변수명 as 변수별명, 함수명 as 함수별명, 클래스명 as 클래스별명</code>
+
+<code class="comment">#가져온 코드 사용하기</code>
+<code>변수별명</code>
+<code>함수별명()</code>
+<code>객체명 = 클래스별명()</code>
+</pre>
+          <li>
+            <code>as</code> 키워드를 사용하여 좀더 읽기 쉽고 쓰기 쉬운 이름으로
+            바꿀 수 있다.
+          </li>
+          <li>
+            별명을 사용하여 자기코드와 가져온 코드간의 이름 충돌을 회피할 수도
+            있다.
+          </li>
+
+          <h3 id="module-name"><code>__name__</code> 변수</h3>
+          <li>
+            각 모듈은 빌트인(built-in) 변수 <code>__name__</code>를 가지고 있다.
+          </li>
+          <li>
+            <code>__name__</code>에는 그 모듈의 <code>모듈명</code>이 저장되어
+            있다.
+          </li>
+          <li>모듈별명이 아니라 모듈본명이 저장되어 있다.</li>
+          <li>
+            메인모듈의 <code>__name__</code>변수에는 <code>모듈명</code>과
+            상관없이 <code>"__main__"</code>이 저장된다.
+          </li>
+          <br />
+          <li>
+            자주 쓰는 코드
+            <pre>
+<code>if __name__ == "__main__":</code>
+<code>    main()</code>
+</pre>
+            <ul>
+              <li>
+                해석: 변수 <code>__name__</code>에 <code>"__main__"</code>이
+                저장되어 있다면, 함수 <code>main()</code>를 실행하라.
+              </li>
+              <li>
+                의미: 현재 실행 중인 모듈이 메인모듈인 경우에만, 함수
+                <code>main()</code>를 실행하라.
+              </li>
+              <li>
+                이유:
+                <ul>
+                  <li>
+                    <code>import 모듈명</code>으로 가져온 모듈은
+                    <code>import</code> 지점에서 실행되는데,
+                  </li>
+                  <li>
+                    모듈의 사용부분을 함수로 정의하지 않으면, 코드를 가져간 본
+                    모듈이 원치않는 지점에서 코드가 사용되는 문제가 발생한다.
+                  </li>
+                  <li>
+                    따라서, 모듈이 메인모듈일 때만 실행할 코드들을 함수
+                    <code>main()</code> 안에 넣어 정의한 후,
+                  </li>
+                  <li>
+                    변수 <code>__name__</code>로 메인모듈임이 확인된 경우만
+                    실행하는 것으로 해결한다.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <h3 id="module-main">메인모듈 실행하기</h3>
+          <p>
+            터미널에서 파이썬
+            실행명령(<code>python</code>,<code>python3</code>,<code>py</code>
+            등 OS에 따라 다름)으로 메인모듈을 실행시킬 수 있다.
+          </p>
+          <pre>
+<code>python 모듈명.py</code>
+<code>python3 모듈명.py</code>
+
+<code>py 모듈명.py</code><code class="comment">  #축약형</code>
+</pre>
+          <li>
+            파이썬 실행명령(예: <code>py</code>)의 뒤를 따르는
+            <code>모듈명.py</code>를 '메인모듈'이라 한다.
+          </li>
+          <li>
+            메인모듈의 <code>__name__</code>변수에는 <code>모듈명</code>과
+            상관없이 <code>"__main__"</code>이 저장된다.
+          </li>
+        </article>
+        <article>
+          <h2 id="packages">패키지(Packages)</h2>
+          <p>
+            패키지란, 파이썬 파일(모듈)들을 담고 있는 디렉토리(폴더)를 말한다.
+          </p>
+          <p>
+            패키지는 다층구조를 가질 수 있다. 즉, 패키지 안에 다층의 하위
+            디렉토리들을 둘 수 있다.
+          </p>
+
+          <h3 id="package-create">만들기(Create)</h3>
+          <p>패키지를 만들기 위해서는 우선 패키지 구조를 결정해야 한다.</p>
+          <p>
+            패키지 구조는 소프트웨어 아키텍쳐(Software Architecture)와 밀접한
+            관계를 갖는다.
+          </p>
+          <p>
+            <code>패키지명</code>은 영어 소문자로 간결하게 작명하며,
+            <code>_</code>는 될 수 있으면 포함시키지 않는다.
+          </p>
+          <pre>
+<code>루트패키지명/</code>
+<code>    __init__.py</code>
+<code>    하위패키지명1/</code>
+<code>        __init__.py</code>
+<code>        모듈명1-1.py</code>
+<code>        모듈명1-2.py</code>
+<code>        ...</code>
+<code>    하위패키지명2/</code>
+<code>        __init__.py</code>
+<code>        모듈명2-1.py</code>
+<code>        모듈명2-2.py</code>
+<code>        ...</code>
+<code>    하위패키지명3/</code>
+<code>        __init__.py</code>
+<code>        모듈명3-1.py</code>
+<code>        모듈명3-2.py</code>
+<code>        ...</code>
+</pre>
+          <li>
+            <code>/</code>으로 끝나는 것은 디렉토리이며, <code>.py</code>로
+            끝나는 것은 파일이다.
+          </li>
+
+          <h3 id="package-init"><code>__init__.py</code> 파일</h3>
+          <li>
+            <code>__init__.py</code> 파일은 패키지의 구조를 파이썬
+            인터프리터에게 알려주는 모듈이다.
+          </li>
+          <li>디렉토리마다 1개씩 위치시킨다.</li>
+          <li>내용이 없는 빈 파일로 생성하는 경우가 대부분이다.</li>
+          <li>파이썬 버전 3.3 이상에서는 생략 가능하다.</li>
+          <br />
+          <li>
+            <code>__init__.py</code> 파일의 특별한 기능
+            <ul>
+              <li>
+                <code>__init__.py</code> 파일은 해당 패키지의 모듈이
+                <code>import</code>될 때, 먼저 로딩되는 모듈이다.
+              </li>
+              <li>
+                패키지의 모듈이 실행되기 위해 필요한 코드를 실행시킬 수 있다.
+              </li>
+              <li>별도의 모듈을 사전에 <code>import</code>할 수 있다.</li>
+              <li>
+                보통, 패키지의 모듈이 실행하는데 필요한 사전작업들을 수행하는
+                함수 <code>setup()</code>을 정의하여 실행시킨다.
+              </li>
+              <br />
+              <li>
+                또한, 빌트인 변수인 <code>__all__</code>을
+                <code>__init__.py</code> 파일 안에 아래와 같이 정의하여,
+                <code>import *</code>에서 가져오는 모듈들을 지정할 수 있다.
+              </li>
+              <pre>
+<code class="comment">#__init__.py 안에</code>
+<code>__all__ = [모듈명1, 모듈명2, ...]</code>
+
+<code class="comment">#모듈 안에</code>
+<code>from 패캐지명 import *</code><code class="comment">  #가져오는 모듈들: 모듈명1, 모듈명2, ...</code>
+</pre>
+            </ul>
+          </li>
+
+          <h3 id="package-import">가져오기(Import)</h3>
+          <pre>
+<code class="comment">#방법1: import</code>
+<code>import 루트패키지명.하위패키지명.모듈명</code><code class="comment">                              #모듈 가져오기</code>
+<code>import 루트패키지명.하위패키지명.모듈명.함수명</code><code class="comment">                        #모듈 멤버 가져오기 (이 경우에는 함수)</code>
+
+<code class="comment">#방법2: from-import</code>
+<code>from 루트패키지명.하위패키지명 import 모듈명</code><code class="comment">                         #모듈 가져오기</code>
+<code>from 루트패키지명.하위패키지명.모듈명 import 변수명, 함수명, 클래스명</code><code class="comment">  #모듈 멤버 가져오기</code>
+
+<code class="comment">#방법3: from-import *(wildcard)</code>
+<code>from 루트패키지명.하위패키지명 import *</code><code class="comment">                              #__init__.__all__에 정의된 모든 모듈 가져오기</code>
+<code>from 루트패키지명.하위패키지명.모듈명 import *</code><code class="comment">                        #모듈 멤버 전부 가져오기</code>
+</pre>
+          <li>
+            코드를 사용하기 위해서는 패키지가 아니라, 모듈을 가져와야 한다.
+          </li>
+          <li>
+            <code>import 패키지명</code>을 실행시키면 패키지를 가져오게 되고,
+            결국 모듈 내의 코드에 접근할 수 없게 된다.
+          </li>
+          <li>패키지는 가져올 모듈로 가는 경로에 해당한다.</li>
+          <li>
+            따라서, <code>모듈명</code> 또는 모듈의 멤버가 <code>import</code>의
+            최종 종착지가 되어야 한다.
+          </li>
+          <br />
+          <li>
+            <code>as</code> 키워드는 모듈의 경우와 동일하게 사용할 수 있다.
+          </li>
+          <br />
+          <li>
+            가져온 코드의 사용법
+            <pre>
+<code class="comment">#가져온 방법1: import</code>
+<code>루트패키지명.하위패키지명.모듈명.변수명</code>
+<code>루트패키지명.하위패키지명.모듈명.함수명()</code>
+<code>객체명 = 루트패키지명.하위패키지명.모듈명.클래스명()</code>
+
+<code class="comment">#가져온 방법2: from-import</code>
+<code class="comment">#모듈을 가져온 경우</code>
+<code>모듈명.변수명</code>
+<code>모듈명.함수명()</code>
+<code>객체명 = 모듈명.클래스명()</code>
+
+<code class="comment">#모듈 멤버를 가져온 경우</code>
+<code>변수명</code>
+<code>함수명()</code>
+<code>객체명 = 클래스명()</code>
+
+<code class="comment">#가져온 방법3: from-import *(wildcard) => 방법2와 동일</code>
+</pre>
+          </li>
+
+          <h3 id="package-pythonpath">환경변수 <code>PYTHONPATH</code></h3>
+          <p>
+            터미널에서 파이썬 파일을 실행시키는 위치에 따라
+            <code>import</code>할 때, <code>루트패키지명</code>을 찾지 못하고
+            에러가 발생하는 경우가 있다.
+          </p>
+          <p>
+            이를 방지하기 위해, 터미널의 환경변수 <code>PYTHONPATH</code>를
+            설정해주어야 한다.
+          </p>
+          <br />
+          <p>
+            디렉토리 <code>루트패키지명/</code>이 위치한 컴퓨터 파일시스템상의
+            파일경로를 <code>C:/파일/경로/루트패키지명</code>이라 한다면,
+          </p>
+          <pre>
+<code class="comment">#터미널</code>
+<code>set PYTHONPATH=C:/파일/경로/루트패키지명</code><code class="comment">  #루트페키지 경로 설정</code>
+<code>py 메인모듈명.py</code><code class="comment">                         #메인모듈을 실행</code>
+
+<code class="comment">#한줄로</code>
+<code>set PYTHONPATH=C:/파일/경로/루트패키지명; py 메인모듈명.py</code>
+</pre>
+          <li>설정된 환경변수 <code>PYTHONPATH</code>는 임시적이다.</li>
+          <li>
+            즉, 터미널이 종료되면 환경변수가 초기화되므로, 실행시킬 때마다
+            설정해주어야 한다.
+          </li>
+
+          <h3 id="package-relative">패키지의 상대 경로</h3>
+          <p>
+            <code>루트패키지명</code>부터 시작하여 모듈에 도달하기까지
+            <code>하위패키지명</code>을 <code>.</code>(닷 연산자)로 이어붙이는
+            것은 패키지의 절대 경로를 이용하는 것이다.
+          </p>
+          <p>
+            파이썬은 상대 경로를 사용하여 코드를 가져올 수 있는 방법도 제공한다.
+          </p>
+          <p>하지만, 절대 경로를 사용할 것을 추천한다.</p>
+          <br />
+          <li>
+            패키지의 상대 경로 접근자
+            <ul>
+              <li><code>.</code> : 현재패키지</li>
+              <li><code>..</code> : 한단계 상위패키지</li>
+              <li><code>...</code> : 두단계 상위패키지</li>
+              <li>점이 하나씩 늘수록 한단계씩 위로 올라간다.</li>
+            </ul>
+          </li>
+          <li>
+            상대 경로의 기준은 코드를 가져오기 위해 <code>import</code>문을
+            사용하는 모듈이다.
+          </li>
+          <li>
+            즉, 각 모듈의 패키지 구조 내의 위치를 기준으로 상대 경로를 따라간다.
+          </li>
+          <pre>
+<code class="comment">#예제</code>
+
+<code class="comment">#패키지 구조</code>
+<code class="comment">#root/</code>
+<code class="comment">#    subpack1/</code>
+<code class="comment">#        module1.py</code>
+<code class="comment">#        module2.py</code>
+<code class="comment">#        subpack2/</code>
+<code class="comment">#            module3.py</code>
+<code class="comment">#    subpack3/</code>
+<code class="comment">#        module4.py</code>
+
+<code class="comment">#기준: root.subpack1.module1</code>
+<code class="comment">#현재모듈: module1 | 현재패키지: subpack1 | 부모패키지: root</code>
+
+<code class="comment">#예제1</code>
+<code>from . import module2</code>
+<code class="comment">#결과: root.subpack1.module2 => 현재패키지(subpack1)의 다른 모듈(module2)</code>
+
+<code class="comment">#예제2</code>
+<code>from .subpack2 import module3</code>
+<code class="comment">#결과: root.subpack1.subpack2.module3 => 현재패키지(subpack1)의 하위패키지(subpack2)의 모듈(module3)</code>
+
+<code class="comment">#예제3</code>
+<code>from ..subpack3 import module4</code>
+<code class="comment">#결과: root.subpack3.module4 => 부모패키지(root)의 하위패키지(subpack3)의 모듈(module4)</code>
+</pre>
+        </article>
+        <article>
+          <h2 id="exceptions">예외처리(Exceptions)</h2>
+          <p>
+            예외처리란, 코드 내에 발생한 에러를 처리하는 방식에 예외를 두는 것을
+            말한다.
+          </p>
+          <p>
+            일반적으로, 코드 내에 에러가 발생하면 파이썬의 실행을 종료시키면서
+            에러 메세지와 트레이스백을 출력한다.
+          </p>
+          <p>
+            하지만, <code>try</code>문을 활용하면 예외적으로 다른 행동을 하도록
+            할 수 있다.
+          </p>
+          <h3 id="exception-try"><code>try</code>문</h3>
+          <pre>
+<code>try:</code><code class="comment">                                                 #예외처리 대상코드</code>
+<code>    실행문1-1</code><code class="comment">                                         #들여쓰기!!!</code>
+<code>    실행문1-2</code>
+<code>    ...</code>
+<code>except 예외클래스명1 as 변수명1:</code><code class="comment">                       #예외처리할 에러타입</code>
+<code>    실행문2-1</code><code class="comment">                                         #변수명1로 에러를 실행문으로 전달</code>
+<code>    실행문2-2</code>
+<code>except 예외클래스명2 as 변수명2:</code><code class="comment">                       #여러개의 except 코드블락 가능</code>
+<code>    실행문3-1</code>
+<code>    실행문3-2</code>
+<code>except (예외클래스명3, 예외클래스명4, ...) as 변수명3:</code><code class="comment">  #여러개의 에러타입을 같은 방식으로 처리</code>
+<code>    실행문4-1</code>
+<code>    실행문4-2</code>
+<code>...</code>
+<code>except:</code><code class="comment">                                              #모든 에러와 매칭</code>
+<code>    실행문5-1</code>
+<code>    실행문5-2</code>
+<code>else:</code><code class="comment">                                                #에러가 발생하지 않았을 때 실행</code>
+<code>    실행문6-1</code>
+<code>    실행문6-2</code>
+<code>finally:</code><code class="comment">                                             #마지막에 무조건 실행</code>
+<code>    실행문7-1</code>
+<code>    실행문7-2</code>
+</pre>
+          <br />
+          <li>
+            <code>try</code> 코드블락
+            <ul>
+              <li>
+                예외처리 대상코드는 <code>try</code> 코드블락 안의
+                <code>실행문</code>들이다.
+              </li>
+              <li>
+                즉, <code>try</code>문은 예외처리 대상코드를 둘러싸듯이
+                작성한다.
+              </li>
+              <br />
+              <li>
+                파이썬의 모든 <code>실행문</code>은 <code>try</code> 코드블락
+                안의 <code>실행문</code>이 될 수 있다.
+              </li>
+              <li>
+                <code>except</code> 코드블락 안의 <code>실행문</code>을 둘러싸는
+                또 다른 <code>try</code>문을 위치시켜 다중 <code>try</code>문을
+                작성하는 경우도 있다.
+                <pre>
+<code class="comment">#예제(다중 try문)</code>
+<code>try:</code><code class="comment">                     #외부 try문</code>
+
+<code>    try:</code><code class="comment">                 #실행문1의 try문</code>
+<code>        실행문1</code><code class="comment">           #내부 try 코드블락의 실행문</code>
+<code>    except 예외클래스명:</code>
+<code>        실행문2</code><code class="comment">           #실행문1의 에러 중 '일부'를 처리하는 실행문</code>
+
+<code>    실행문3</code><code class="comment">               #외부 try 코드블락의 실행문</code>
+
+<code>except:</code>
+
+<code>    try:</code><code class="comment">                 #실행문4의 try문</code>
+<code>        실행문4</code><code class="comment">           #실행문1의 처리되지 못한 에러와 실행문2, 실행문3의 에러를 처리하는 실행문</code>
+<code>    except:</code>
+<code>        실행문5</code><code class="comment">           #실행문4의 에러를 처리하는 실행문</code>
+</pre>
+              </li>
+              <br />
+              <li>
+                <code>try</code> 코드블락 안의 <code>실행문</code>에서 에러가
+                발생하게 되면, 에러발생 지점에서 <code>실행문</code>의 실행이
+                중단된다.
+              </li>
+              <li>
+                즉, 에러발생 지점 이후의 코드들은 실행되지 않고
+                <code>except</code> 코드블락으로 넘어간다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <code>except</code> 코드블락
+            <ul>
+              <li>
+                <code>except</code> 코드블락은 <code>try</code> 코드블락 안에서
+                발생한 에러를 처리할 예외적인 방법들을 정의한 것이다.
+              </li>
+              <li><code>except</code> 코드블락은 여러개가 올 수 있다.</li>
+              <br />
+              <li>
+                에러가 발생하면 그 에러의 <code>예외클래스명</code>과 매칭되는
+                <code>except</code> 코드블락이 실행된다.
+              </li>
+              <li>
+                만약, 다수의 매칭이 발생한다면 위에서부터 먼저 매칭되는
+                코드블락을 실행한다.
+              </li>
+              <li>
+                <code>예외클래스명</code>이 없는 <code>except:</code>은 모든
+                에러타입과 매칭되므로 가장 마지막 <code>except</code> 코드블락이
+                되어야 한다.
+              </li>
+              <li>
+                한번 매칭이 발생하여 예외처리가 된 에러는 처리가 완료되면
+                삭제된다.
+              </li>
+              <li>
+                한번 처리를 한 에러를 외부 <code>try</code>문으로 전달하기
+                위해선 다시 그 에러를 <code>raise</code>하여야 한다.
+              </li>
+              <br />
+              <li>
+                매칭이 발생되지 않은 에러는 처리가 되지 않았으므로, 외부
+                <code>try</code>문이 있다면 그 <code>try</code>문의
+                <code>except</code> 코드블락에서 다시 매칭을 시도한다.
+              </li>
+              <li>
+                어떤 <code>try</code>문에서도 발생한 에러를 처리하지 않게되면,
+                그 에러는 파이썬의 디폴트 에러처리 방법인 종료와 메세지 및
+                트레이스백을 출력을 하게 된다.
+              </li>
+              <br />
+              <li>
+                여러 타입의 에러를 동일한 방법으로 처리한다면,
+                <code>(예외클래스명1, 예외클래스명2, ...)</code>처럼 에러 타입을
+                튜플로 묶어, 여러가지 에러를 한가지 방법으로 처리할 수 있다.
+              </li>
+              <li>
+                <code>as</code>키워드를 사용하면, 발생한 에러를 변수에 저장하여
+                <code>except</code> 코드블락 안으로 전달할 수 있다.
+              </li>
+              <li>
+                <code>as</code>키워드를 통해 저장된 에러는 해당
+                <code>except</code> 코드블락이 끝나는 시점에서 삭제되므로, 해당
+                코드블락 외부에서 접근할 수 없다.
+              </li>
+              <br />
+              <li>
+                <code>except</code> 코드블락 내에서 발생한 에러는 별도의
+                <code>try</code>문으로 감싸지 않는 한 예외처리되지 않는다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <code>else</code> 코드블락
+            <ul>
+              <li>
+                <code>try</code> 코드블락의 <code>실행문</code>이 에러 없이 모두
+                실행됐을때, <code>else</code> 코드블락이 실행된다.
+              </li>
+              <li>
+                단, <code>return</code>문, <code>continue</code>문,
+                <code>break</code>문을 통해 <code>try</code> 코드블락의 실행이
+                종료된 경우, <code>else</code> 코드블락은 실행되지 않는다.
+              </li>
+              <br />
+              <li>
+                <code>else</code> 코드블락 내에서 발생한 에러는 별도의
+                <code>try</code>문으로 감싸지 않는 한 예외처리되지 않는다.
+              </li>
+            </ul>
+          </li>
+          <br />
+          <li>
+            <code>finally</code> 코드블락
+            <ul>
+              <li>
+                <code>try</code>코드블락은 에러 발생 지점에서 실행이 중단되기
+                때문에 에러가 발생하더라도 반드시 실행되어야 하는
+                <code>실행문</code>들을 실행할 수 없다.
+              </li>
+              <li>
+                <code>finally</code> 코드블락은 에러가 발생하더라도 반드시
+                실행되어야 하는 <code>실행문</code>들을 정의한 것이다.
+              </li>
+              <br />
+              <li>
+                <code>try</code>문의 모든 코드블락(<code>try</code> 코드블락,
+                <code>except</code> 코드블락, <code>else</code> 코드블락)이
+                실행된 이후, 마지막으로 <code>finally</code> 코드블락이
+                실행된다.
+              </li>
+              <li>
+                <code>finally</code> 코드블락은 에러 발생여부, 종료방식과
+                상관없이 무조건 실행된다.
+              </li>
+              <li>
+                <code>finally</code> 코드블락은 <code>try</code>문에서 발생한
+                것들을 정리하는 역할을 한다.
+              </li>
+              <li>
+                그래서, <code>finally</code> 코드블락을 '클린업'
+                코드블락이라고도 한다.
+              </li>
+              <br />
+              <li>
+                <code>finally</code> 코드블락 내에서 발생한 에러는 별도의
+                <code>try</code>문으로 감싸지 않는 한 예외처리되지 않는다.
+              </li>
+            </ul>
+          </li>
+
+          <h3 id="exception-raise"><code>raise</code>문</h3>
+          <p>
+            특정 조건이 충족되면 에러가 발생한 것으로 간주하고, 현재 코드의
+            실행을 중단시켜야할 때가 있다.
+          </p>
+          <p>
+            이때, <code>raise</code>문은 파이썬 인터프리터에게 에러의 발생을
+            알리는 역할을 한다.
+          </p>
+          <pre>
+<code class="comment">#단독형</code>
+<code>raise 예외객체</code>
+
+<code class="comment">#연결형</code>
+<code>raise 예외객체 from 원인예외명</code>
+</pre>
+          <li>
+            <code>예외객체</code>자리에 <code>예외클래스명</code>을 사용하면
+            <code>예외클래스명()</code>을 통해 해당 클래스의 인스턴스를
+            사용한다.
+          </li>
+          <li>
+            <code>예외객체</code>로 보통 빌트인(built-in) 예외 객체들을
+            사용하지만, 사용자 정의 예외 클래스의 인스턴스를 사용할 수도 있다.
+          </li>
+          <br />
+          <li>
+            <code>from 원인예외명</code>을 더하여 예외 객체들을 연결시킬 수
+            있다. 즉, 여러개의 에러를 복합시킬 수 있다.
+          </li>
+          <li>
+            <code>원인예외명</code>은 <code>예외객체</code>의 빌트인(built-in)
+            속성인 <code>__cause__</code>에 저장된다.
+          </li>
+          <li>
+            연결형은 주로 <code>try</code>문의 <code>except</code>코드블락
+            안에서 다시 예외를 발생시키는 경우에 주로 사용한다.
+          </li>
+          <br />
+          <pre>
+<code class="comment">#예제</code>
+<code>class MyError(Exception):</code><code class="comment">                     #사용자 정의 예외클래스</code>
+<code>    pass</code>
+
+<code>try:</code><code class="comment">                                          #외부 try 코드블락</code>
+<code>    try:</code><code class="comment">                                      #내부 try 코드블락</code>
+<code>        print("시험용 에러 발생을 시작합니다.")</code>
+<code>        raise MyError("원인에러")</code><code class="comment">              #에러 발생</code>
+<code>    except MyError as e:</code><code class="comment">                      #내부 except 코드블락</code>
+<code>        print("에러 발생을 감지하였습니다.")</code>
+<code>        raise Exception("연결된 에러") from e</code><code class="comment">  #에러를 외부 try문으로 전달</code>
+<code>except Exception as e:</code><code class="comment">                        #외부 except 코드블락</code>
+<code>    print("에러를 처리합니다.")</code>
+<code>    print(f"에러: {e} | 원인: {e.__cause__}")</code><code class="comment">  #에러 처리</code>
+</pre>
+          <h3 id="exception-inherit">
+            사용자 정의 예외클래스(User Defined Exception Class)
+          </h3>
+          <p>
+            예외클래스를 상속받아 나만의 예외클래스를 만들면 좀더 효율적인
+            예외처리가 가능하다.
+          </p>
+          <pre>
+<code>class 예외클래스명(Exception):</code><code class="comment">  #Exception 클래스를 상속</code>
+<code>    pass</code>
+</pre>
+        </article>
+        <article>
+          <h2 id="references">참고자료(References)</h2>
+          <li>
+            <a
+              href="https://docs.python.org/ko/3/library/functions.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >파이썬 빌트인(Built-in) 함수</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.python.org/ko/3/library/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >파이썬 빌트인(Built-in) 모듈</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.python.org/ko/3/library/exceptions.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >파이썬 빌트인(Built-in) 예외클래스</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.python.org/ko/3/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >파이썬 공식 문서</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3schools.com/python/default.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >W3Schools.com 파이썬 튜토리얼</a
+            >
+          </li>
+        </article>
+      </section>
+      <div class="nav-btn" onclick="onMenuClick()"><span></span></div>
+    </main>
+    <footer>
+      <p>
+        Copyright &copy; 2022
+        <a
+          href="https://github.com/junekimdev"
+          target="_blank"
+          rel="noopener noreferrer"
+          >June Kim</a
+        >. All rights reserved.
+      </p>
+      <p>Last-updated at 2022/01/03</p>
+    </footer>
+  </body>
+</html>
