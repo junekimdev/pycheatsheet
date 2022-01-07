@@ -18,6 +18,10 @@
     margin-right: 16px;
   }
 
+  .ads {
+    height: 90px;
+  }
+
   nav {
     width: 30ch;
     border-right: 2px solid #a8a8a8;
@@ -63,10 +67,20 @@
     display: none;
   }
 
+  .ads {
+    grid-area: nav;
+    top: calc(100vh - 250px);
+    bottom: auto;
+    width: 100%;
+    height: 250px;
+  }
+
   nav {
     grid-area: nav;
     position: sticky;
+    top: 0;
     width: 100%;
+    height: calc(100vh - 250px);
     padding: 0.5em 1em;
   }
   nav.none {
@@ -75,6 +89,7 @@
 
   section {
     grid-area: sec;
+    height: 100%;
     overflow-x: auto;
   }
 }
