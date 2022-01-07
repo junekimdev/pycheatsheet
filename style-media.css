@@ -18,7 +18,8 @@
     margin-right: 16px;
   }
 
-  .ads {
+  .ads,
+  .ad-slot {
     height: 90px;
   }
 
@@ -72,6 +73,11 @@
     top: calc(100vh - 250px);
     bottom: auto;
     width: 100%;
+    height: 250px;
+  }
+
+  .ad-slot {
+    width: 250px;
     height: 250px;
   }
 
