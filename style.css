@@ -287,3 +287,10 @@ pre code {
   height: 50px;
   display: block;
 }
+
+ins.adsbygoogle span {
+  display: none !important;
+}
+ins.adsbygoogle[data-ad-status="unfilled"] span {
+  display: block;
+}
