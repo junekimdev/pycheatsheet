@@ -1,10 +1,12 @@
 const onMenuClick = () => {
   const menu = document.getElementById("menu");
-  const newClass = menu.className === "hide" ? "show" : "hide";
-  menu.className = newClass;
+  const isHide = menu.className === "hide";
+  menu.className = isHide ? "show" : "hide";
+
+  const menuBtn = document.getElementById("nav-btn");
+  const oldBtnClass = isHide ? "sandwich" : "cross";
+  const newBtnClass = isHide ? "cross" : "sandwich";
+  menuBtn.classList.replace(oldBtnClass, newBtnClass);
 };
 
-const onMenuItemClick = () => {
-  const menu = document.getElementById("menu");
-  menu.className = "hide";
-};
+const onMenuItemClick = () => onMenuClick();
