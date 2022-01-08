@@ -123,11 +123,11 @@ nav {
   background-color: var(--bg-color);
   z-index: 3;
 }
-nav.none {
+nav.hide {
   transform: translate(-100vw);
   transition: transform 0.5s ease-out;
 }
-nav.clicked {
+nav.show {
   transform: translate(0);
   transition: transform 0.5s ease-out;
 }

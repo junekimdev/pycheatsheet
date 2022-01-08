@@ -27,7 +27,7 @@
     width: 30ch;
     border-right: 2px solid #a8a8a8;
   }
-  nav.none {
+  nav.hide {
     transform: translate(-30ch);
   }
 
@@ -89,8 +89,8 @@
     height: calc(100vh - 250px);
     padding: 0.5em 1em;
   }
-  nav.none {
-    transform: translate(0);
+  nav.hide {
+    transform: none;
   }
 
   section {

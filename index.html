@@ -79,66 +79,182 @@
       <p><small>python version: 3.10</small></p>
     </header>
     <main>
-      <nav id="menu" class="none">
-        <a class="L1" href="#basic">기본(Basic)</a>
-        <a class="L1" href="#operators">연산자(Operators)</a>
-        <a class="L2" href="#op-arithmetic">수리(Arithmetic) 연산</a>
-        <a class="L2" href="#op-assignment">할당(Assignment) 연산</a>
-        <a class="L2" href="#op-comparison">비교(Comparison) 연산</a>
-        <a class="L2" href="#op-logical">논리(Logical) 연산</a>
-        <a class="L2" href="#op-identity">동일성(Identity) 연산</a>
-        <a class="L2" href="#op-membership">멤버쉽(Membership) 연산</a>
-        <a class="L2" href="#op-bitwise">비트(Bitwise) 연산</a>
-        <a class="L1" href="#variable">변수(Variable)</a>
-        <a class="L1" href="#types">자료형(Data Types)</a>
-        <a class="L2" href="#type-numbers">숫자(Numbers)</a>
-        <a class="L2" href="#type-string">문자열(String)</a>
-        <a class="L3" href="#type-string-formatting">포매팅(Formatting)</a>
-        <a class="L2" href="#type-collections">콜렉션(Collections)</a>
-        <a class="L3" href="#indexing">인덱싱(Indexing)</a>
-        <a class="L3" href="#slicing">슬라이싱(Slicing)</a>
-        <a class="L2" href="#type-boolean">불리언(Boolean)</a>
-        <a class="L1" href="#controls">제어문(Controls)</a>
-        <a class="L2" href="#ctl-conditionals">조건문(Conditionals)</a>
-        <a class="L3" href="#ctl-assign-exp">할당(Assignment) 표현</a>
-        <a class="L2" href="#ctl-loops">반복문(Loops)</a>
-        <a class="L3" href="#ctl-list-compre">리스트 내포</a>
-        <a class="L1" href="#functions">함수(Functions)</a>
-        <a class="L2" href="#func-params">매개변수(Parameters)</a>
-        <a class="L3" href="#func-variadic">임의의 인자</a>
-        <a class="L2" href="#func-return">return문</a>
-        <a class="L2" href="#func-calling">함수의 호출(Calling)</a>
-        <a class="L2" href="#func-inner-func">함수 내의 함수</a>
-        <a class="L3" href="#func-recursive">재귀(Recursive) 함수</a>
-        <a class="L2" href="#func-lambda">람다(Lambda) 표현</a>
-        <a class="L2" href="#func-input">입력(Input) 함수</a>
-        <a class="L2" href="#func-files">파일(Files) 읽고 쓰기</a>
-        <a class="L2" href="#func-docstring">설명글(Docstring)</a>
-        <a class="L1" href="#classes">클래스(Classes)</a>
-        <a class="L2" href="#class-concepts">개념(Concepts)</a>
-        <a class="L2" href="#class-class">class문</a>
-        <a class="L2" href="#class-gen-and-del">객체의 생성과 삭제</a>
-        <a class="L2" href="#class-object-member">객체 속성과 메서드</a>
-        <a class="L2" href="#class-class-member">클래스 변수와 메서드</a>
-        <a class="L2" href="#class-inherit">상속(Inheritance)</a>
-        <a class="L1" href="#modules">모듈(Modules)</a>
-        <a class="L2" href="#module-create">만들기(Create)</a>
-        <a class="L2" href="#module-import">가져오기(Import)</a>
-        <a class="L3" href="#module-from-import">멤버 가져오기</a>
-        <a class="L3" href="#module-as">as 키위드</a>
-        <a class="L2" href="#module-name">__name__ 변수</a>
-        <a class="L2" href="#module-main">메인모듈 실행하기</a>
-        <a class="L1" href="#packages">패키지(Packages)</a>
-        <a class="L2" href="#package-create">만들기(Create)</a>
-        <a class="L2" href="#package-init">__init__.py 파일</a>
-        <a class="L2" href="#package-import">가져오기(Import)</a>
-        <a class="L3" href="#package-import">환경변수 PYTHONPATH</a>
-        <a class="L3" href="#package-relative">패키지의 상대 경로</a>
-        <a class="L1" href="#exceptions">예외처리(Exceptions)</a>
-        <a class="L2" href="#exception-try">try문</a>
-        <a class="L2" href="#exception-raise">raise문</a>
-        <a class="L3" href="#exception-inherit">사용자 정의 예외클래스</a>
-        <a class="L1" href="#references">참고자료(References)</a>
+      <nav id="menu" class="hide">
+        <a class="L1" onclick="onMenuItemClick()" href="#basic">기본(Basic)</a>
+        <a class="L1" onclick="onMenuItemClick()" href="#operators"
+          >연산자(Operators)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-arithmetic"
+          >수리(Arithmetic) 연산</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-assignment"
+          >할당(Assignment) 연산</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-comparison"
+          >비교(Comparison) 연산</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-logical"
+          >논리(Logical) 연산</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-identity"
+          >동일성(Identity) 연산</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-membership"
+          >멤버쉽(Membership) 연산</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#op-bitwise"
+          >비트(Bitwise) 연산</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#variable"
+          >변수(Variable)</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#types"
+          >자료형(Data Types)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#type-numbers"
+          >숫자(Numbers)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#type-string"
+          >문자열(String)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#type-string-formatting"
+          >포매팅(Formatting)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#type-collections"
+          >콜렉션(Collections)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#indexing"
+          >인덱싱(Indexing)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#slicing"
+          >슬라이싱(Slicing)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#type-boolean"
+          >불리언(Boolean)</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#controls"
+          >제어문(Controls)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#ctl-conditionals"
+          >조건문(Conditionals)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#ctl-assign-exp"
+          >할당(Assignment) 표현</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#ctl-loops"
+          >반복문(Loops)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#ctl-list-compre"
+          >리스트 내포</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#functions"
+          >함수(Functions)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-params"
+          >매개변수(Parameters)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#func-variadic"
+          >임의의 인자</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-return"
+          >return문</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-calling"
+          >함수의 호출(Calling)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-inner-func"
+          >함수 내의 함수</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#func-recursive"
+          >재귀(Recursive) 함수</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-lambda"
+          >람다(Lambda) 표현</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-input"
+          >입력(Input) 함수</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-files"
+          >파일(Files) 읽고 쓰기</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#func-docstring"
+          >설명글(Docstring)</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#classes"
+          >클래스(Classes)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#class-concepts"
+          >개념(Concepts)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#class-class"
+          >class문</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#class-gen-and-del"
+          >객체의 생성과 삭제</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#class-object-member"
+          >객체 속성과 메서드</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#class-class-member"
+          >클래스 변수와 메서드</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#class-inherit"
+          >상속(Inheritance)</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#modules"
+          >모듈(Modules)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#module-create"
+          >만들기(Create)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#module-import"
+          >가져오기(Import)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#module-from-import"
+          >멤버 가져오기</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#module-as"
+          >as 키위드</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#module-name"
+          >__name__ 변수</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#module-main"
+          >메인모듈 실행하기</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#packages"
+          >패키지(Packages)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#package-create"
+          >만들기(Create)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#package-init"
+          >__init__.py 파일</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#package-import"
+          >가져오기(Import)</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#package-import"
+          >환경변수 PYTHONPATH</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#package-relative"
+          >패키지의 상대 경로</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#exceptions"
+          >예외처리(Exceptions)</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#exception-try"
+          >try문</a
+        >
+        <a class="L2" onclick="onMenuItemClick()" href="#exception-raise"
+          >raise문</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#exception-inherit"
+          >사용자 정의 예외클래스</a
+        >
+        <a class="L1" onclick="onMenuItemClick()" href="#references"
+          >참고자료(References)</a
+        >
       </nav>
       <section>
         <article>
