@@ -33,7 +33,7 @@
     <meta name="robots" content="all" />
     <meta
       name="description"
-      content="파이썬 언어를 배우는 지름길. 핵심적인 부분만 요약합니다. (기초편)"
+      content="파이썬 언어를 배우는 지름길 | 핵심적인 부분만 요약합니다 (기초편)"
     />
     <meta name="author" content="junekimdev" />
     <meta property="article:author" content="junekimdev" />
@@ -41,7 +41,7 @@
     <meta property="og:title" content="파이썬 요약집(기초)" />
     <meta
       property="og:description"
-      content="파이썬 언어를 배우는 지름길. 핵심적인 부분만 요약합니다. (기초편)"
+      content="파이썬 언어를 배우는 지름길 | 핵심적인 부분만 요약합니다 (기초편)"
     />
     <meta property="og:site_name" content="파이썬 요약집(기초)" />
     <meta property="og:url" content="https://pycheatsheet.junekim.xyz" />
@@ -59,7 +59,7 @@
     <meta name="twitter:title" content="파이썬 요약집(기초)" />
     <meta
       name="twitter:description"
-      content="파이썬 언어를 배우는 지름길. 핵심적인 부분만 요약합니다. (기초편)"
+      content="파이썬 언어를 배우는 지름길 | 핵심적인 부분만 요약합니다 (기초편)"
     />
     <meta name="twitter:creator" content="junekimdev" />
     <meta
@@ -258,7 +258,13 @@
         <a class="L2" onclick="onMenuItemClick()" href="#package-import"
           >가져오기(Import)</a
         >
-        <a class="L3" onclick="onMenuItemClick()" href="#package-import"
+        <a class="L2" onclick="onMenuItemClick()" href="#package-main"
+          >메인모듈 실행하기</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#package-mainfile"
+          >__main__.py 파일</a
+        >
+        <a class="L3" onclick="onMenuItemClick()" href="#package-pythonpath"
           >환경변수 PYTHONPATH</a
         >
         <a class="L3" onclick="onMenuItemClick()" href="#package-relative"
@@ -3639,6 +3645,7 @@
           <pre>
 <code>루트패키지명/</code>
 <code>    __init__.py</code>
+<code>    __main__.py</code>
 <code>    하위패키지명1/</code>
 <code>        __init__.py</code>
 <code>        모듈명1-1.py</code>
@@ -3655,48 +3662,60 @@
 <code>        모듈명3-2.py</code>
 <code>        ...</code>
 </pre>
-          <li>
+          <p>
             <code>/</code>으로 끝나는 것은 디렉토리이며, <code>.py</code>로
             끝나는 것은 파일이다.
-          </li>
+          </p>
 
           <h3 id="package-init"><code>__init__.py</code> 파일</h3>
           <li>
-            <code>__init__.py</code> 파일은 패키지의 구조를 파이썬
-            인터프리터에게 알려주는 모듈이다.
-          </li>
-          <li>디렉토리마다 1개씩 위치시킨다.</li>
-          <li>내용이 없는 빈 파일로 생성하는 경우가 대부분이다.</li>
-          <li>파이썬 버전 3.3 이상에서는 생략 가능하다.</li>
-          <br />
-          <li>
-            <code>__init__.py</code> 파일의 특별한 기능
+            <code>__init__.py</code> 파일은 패키지 초기화 모듈이다.
             <ul>
               <li>
-                <code>__init__.py</code> 파일은 해당 패키지의 모듈이
-                <code>import</code>될 때, 먼저 로딩되는 모듈이다.
+                패키지 초기화란, 패키지의 소속 모듈들을 실행하기 위해 먼저
+                실행하여야 할 필요가 있는 코드들을 실행하는 것을 말한다.
               </li>
+              <li>따라서, 패키지(디렉토리)마다 1개씩 가지고 있다.</li>
+              <br />
+              <li>내용이 없는 빈 파일로 생성하는 경우가 대부분이다.</li>
               <li>
-                패키지의 모듈이 실행되기 위해 필요한 코드를 실행시킬 수 있다.
+                빈 파일이라도 생성하는 이유는 <code>__init__.py</code> 파일이
+                패키지의 구조를 파이썬 인터프리터에게 알려주는 모듈이기
+                때문이다.
               </li>
-              <li>별도의 모듈을 사전에 <code>import</code>할 수 있다.</li>
-              <li>
-                보통, 패키지의 모듈이 실행하는데 필요한 사전작업들을 수행하는
-                함수 <code>setup()</code>을 정의하여 실행시킨다.
-              </li>
+              <li>빈 파일이라면 파이썬 버전 3.3 이상에서는 생략 가능하다.</li>
               <br />
               <li>
-                또한, 빌트인 변수인 <code>__all__</code>을
-                <code>__init__.py</code> 파일 안에 아래와 같이 정의하여,
-                <code>import *</code>에서 가져오는 모듈들을 지정할 수 있다.
+                <code>__init__.py</code> 파일은 해당 패키지의 모듈이
+                <code>import</code>될 때, 먼저 로딩되어 실행된다.
               </li>
+              <li>
+                <code>setup()</code>등의 함수를 정의하여 실행시키기도 한다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <code>__init__.py</code> 파일 내에서도 <code>import</code>문을
+            사용하여 다른 모듈을 가져올 수 있다.
+          </li>
+          <br />
+          <li>
+            <code>__all__</code> 변수
+            <ul>
+              <p>
+                <code>__all__</code> 변수는 <code>__init__.py</code> 파일 내에
+                위치하여, <code>from 패캐지명 import *</code>를 통해 가져오는
+                모듈들의 이름을 지정하고 리스트로 저장하고 있는 변수이다.
+              </p>
               <pre>
-<code class="comment">#__init__.py 안에</code>
+<code class="comment">#__init__.py 안에서</code>
 <code>__all__ = [모듈명1, 모듈명2, ...]</code>
 
-<code class="comment">#모듈 안에</code>
+
+<code class="comment">#모듈 안에서</code>
 <code>from 패캐지명 import *</code><code class="comment">  #가져오는 모듈들: 모듈명1, 모듈명2, ...</code>
 </pre>
+              <p><code>__all__</code> 변수는 리스트 자료형을 받는다.</p>
             </ul>
           </li>
 
@@ -3711,7 +3730,7 @@
 <code>from 루트패키지명.하위패키지명.모듈명 import 변수명, 함수명, 클래스명</code><code class="comment">  #모듈 멤버 가져오기</code>
 
 <code class="comment">#방법3: from-import *(wildcard)</code>
-<code>from 루트패키지명.하위패키지명 import *</code><code class="comment">                              #__init__.__all__에 정의된 모든 모듈 가져오기</code>
+<code>from 루트패키지명.하위패키지명 import *</code><code class="comment">                              #하위패키지의 __init__.__all__에 정의된 모든 모듈 가져오기</code>
 <code>from 루트패키지명.하위패키지명.모듈명 import *</code><code class="comment">                        #모듈 멤버 전부 가져오기</code>
 </pre>
           <li>
@@ -3724,7 +3743,7 @@
           <li>패키지는 가져올 모듈로 가는 경로에 해당한다.</li>
           <li>
             따라서, <code>모듈명</code> 또는 모듈의 멤버가 <code>import</code>의
-            최종 종착지가 되어야 한다.
+            최종 목적지가 되어야 한다.
           </li>
           <br />
           <li>
@@ -3754,33 +3773,91 @@
 </pre>
           </li>
 
+          <h3 id="package-main">메인모듈 실행하기</h3>
+          <p>메인모듈을 실행하는 방법은 2가지가 있다.</p>
+          <pre>
+<code class="comment">#파일명으로 실행하기</code>
+<code>python 상위/경로/루트패키지명/하위패키지명/모듈명.py</code>
+<code>python3 상위/경로루트패키지명/하위패키지명/모듈명.py</code>
+<code>py 상위/경로/루트패키지명/하위패키지명/모듈명.py</code>
+
+<code class="comment">#모듈 옵션으로 실행하기</code>
+<code>python -m 루트패키지명.하위패키지명.모듈명</code>
+<code>python3 -m 루트패키지명.하위패키지명.모듈명</code>
+<code>py -m 루트패키지명.하위패키지명.모듈명</code>
+</pre>
+          <p>
+            <code>상위/경로/</code>란, 루트패키지가 위치한 컴퓨터 파일시스템상의
+            상위 경로를 말한다.
+          </p>
+          <li>
+            파일명으로 메인모듈을 실행하는 경우, 메인모듈은 최상위패키지로
+            취급하므로 상대경로를 사용한 모든 <code>import</code>문에서 에러가
+            발생한다.
+          </li>
+          <li>
+            따라서, 이 경우 <code>import</code>문은 모두 절대경로를 사용하여야
+            한다.
+          </li>
+          <br />
+          <li>
+            모듈 옵션으로 메인모듈을 실행하는 방법은 옵션 <code>-m</code> 뒤에
+            <code>.</code>(닷 연산자)를 사용하여 <code>import</code>문처럼
+            패키지와 모듈의 이름을 나열하여 실행하는 것이다.
+          </li>
+          <li>
+            환경변수 <code>PYTHONPATH</code>를 셋팅하여야 파이썬 인터프리터가
+            루트패키지를 찾을 수 있다.
+          </li>
+
+          <h3 id="package-mainfile"><code>__main__.py</code> 파일</h3>
+          <pre>
+<code class="comment">#터미널에서</code>
+<code>py -m 패키지명</code><code class="comment">  #패키지명/__main__.py가 실행된다.</code>
+</pre>
+          <p>
+            모듈 옵션으로 메인모듈을 실행할 때 <code>패키지명</code>을 사용하면,
+            <code>패키지명/</code> 디렉토리의 <code>__main__.py</code> 파일이
+            메인모듈로 실행된다.
+          </p>
+
           <h3 id="package-pythonpath">환경변수 <code>PYTHONPATH</code></h3>
           <p>
-            터미널에서 파이썬 파일을 실행시키는 위치에 따라
-            <code>import</code>할 때, <code>루트패키지명</code>을 찾지 못하고
-            에러가 발생하는 경우가 있다.
+            파이썬 인터프리터는 <code>sys.path</code>에서 패키지를 검색하여
+            가져온다.
           </p>
           <p>
-            이를 방지하기 위해, 터미널의 환경변수 <code>PYTHONPATH</code>를
-            설정해주어야 한다.
+            <code>sys.path</code> 내에 루트패키지의 경로가 없다면
+            <code>import</code>문 사용시 에러가 발생한다.
+          </p>
+          <p>
+            메인모듈 실행시 터미널의 환경변수 <code>PYTHONPATH</code>를
+            설정해주면 이 에러를 방지할 수 있다.
           </p>
           <br />
-          <p>
+          <li>
             디렉토리 <code>루트패키지명/</code>이 위치한 컴퓨터 파일시스템상의
-            파일경로를 <code>C:/파일/경로/루트패키지명</code>이라 한다면,
-          </p>
+            파일경로를 <code>C:/상위/경로/루트패키지명/</code>이라 한다면,
+          </li>
           <pre>
 <code class="comment">#터미널</code>
-<code>set PYTHONPATH=C:/파일/경로/루트패키지명</code><code class="comment">  #루트페키지 경로 설정</code>
-<code>py 메인모듈명.py</code><code class="comment">                         #메인모듈을 실행</code>
-
-<code class="comment">#한줄로</code>
-<code>set PYTHONPATH=C:/파일/경로/루트패키지명; py 메인모듈명.py</code>
+<code>set PYTHONPATH=C:/상위/경로</code><code class="comment">              #루트페키지의 상위경로</code>
+<code>py -m 루트패키지명.하위패키지명.메인모듈명</code><code class="comment">  #메인모듈을 실행</code>
 </pre>
-          <li>설정된 환경변수 <code>PYTHONPATH</code>는 임시적이다.</li>
           <li>
-            즉, 터미널이 종료되면 환경변수가 초기화되므로, 실행시킬 때마다
+            루트페키지의 상위 경로인 <code>C:/상위/경로/</code>를 환경변수
+            <code>PYTHONPATH</code>에 셋팅한다.
+          </li>
+          <li>
+            설정된 <code>PYTHONPATH</code>는 해당 터미널 내에서만 유효하다.
+          </li>
+          <li>
+            터미널이 종료되면 환경변수가 초기화되므로, 실행시킬 때마다
             설정해주어야 한다.
+          </li>
+          <li>
+            어떤 방법으로 메인모듈을 실행하든지 <code>PYTHONPATH</code>를
+            설정하는 것이 좋다.
           </li>
 
           <h3 id="package-relative">패키지의 상대 경로</h3>
@@ -4199,7 +4276,7 @@
           >June Kim</a
         >. All rights reserved.
       </p>
-      <p>Last-updated at 2022/01/03</p>
+      <p>Last-updated at 2022/01/14</p>
     </footer>
   </body>
 </html>
