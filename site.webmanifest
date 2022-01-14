@@ -1,19 +1,24 @@
 {
-    "name": "",
-    "short_name": "",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#a9a8ff",
-    "background_color": "#a9a8ff",
-    "display": "standalone"
+  "name": "파이썬 요약집(기초)",
+  "short_name": "파이썬(기초)",
+  "lang": "ko",
+  "categories": ["education", "productivity"],
+  "start_url": "/",
+  "scope": ".",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#a9a8ff",
+  "background_color": "#a9a8ff",
+  "display": "standalone",
+  "prefer_related_applications": false
 }

@@ -89,8 +89,10 @@
     height: calc(100vh - 250px);
     padding: 0.5em 1em;
   }
+  nav.show,
   nav.hide {
     transform: none;
+    transition: none;
   }
 
   section {
