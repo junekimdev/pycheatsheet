@@ -7,6 +7,7 @@
   --bg-color: #f8f8f8;
   --accent-color: #a9a8ff;
   --link-color: blue;
+  --dark-trans-color: #303030c0;
 }
 
 body {
@@ -277,6 +278,7 @@ ul pre {
 }
 
 code {
+  font-family: Consolas, monaco, monospace;
   padding: 2px 4px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 2px;
@@ -315,4 +317,90 @@ ins.adsbygoogle span {
 }
 ins.adsbygoogle[data-ad-status="unfilled"] span {
   display: block;
+}
+
+.offlineContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(transparent, var(--accent-color));
+}
+
+.offlineWrapper {
+  position: relative;
+  width: min(95vw, 95vh);
+  aspect-ratio: 1;
+}
+
+.offlineWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fa-comment-alt {
+  position: absolute;
+  --space: min(15vw, 15vh);
+  top: var(--space);
+  right: var(--space);
+  width: var(--space);
+  height: var(--space);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--space) * 1.5);
+  color: var(--bg-color);
+}
+
+.fa-heart-broken {
+  position: absolute;
+  --space: min(15vw, 15vh);
+  top: min(13vw, 13vh);
+  right: var(--space);
+  width: var(--space);
+  height: var(--space);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--space) / 1.5);
+  color: red;
+}
+.offlineWrapper a {
+  display: block;
+}
+
+.fa-home {
+  position: absolute;
+  cursor: pointer;
+  --space: min(3vw, 3vh);
+  --size: max(min(10vw, 10vh), 48px);
+  bottom: var(--space);
+  right: var(--space);
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--size) / 2);
+  color: var(--bg-color);
+  background-color: var(--dark-trans-color);
+  border-radius: 8px;
+}
+
+.offlineMsg {
+  position: absolute;
+  bottom: min(5vw, 5vh);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.offlineMsg p {
+  padding: 8px;
+  color: var(--bg-color);
+  background-color: var(--dark-trans-color);
+  border-radius: 8px;
 }
