@@ -50,11 +50,11 @@ This is a cheatsheet for Python programming language.
 - 가져오기(Import)
 - 멤버 가져오기
 - as 키위드
-- __name__ 변수
+- \__name__ 변수
 - 메인모듈 실행하기
 - 패키지(Packages)
 - 만들기(Create)
-- __init__.py 파일
+- \__init__.py 파일
 - 가져오기(Import)
 - 환경변수 PYTHONPATH
 - 패키지의 상대 경로
