@@ -10,3 +10,14 @@ const onMenuClick = () => {
 };
 
 const onMenuItemClick = () => onMenuClick();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register("/service-worker.js");
+      console.log("service worker registered");
+    } catch (error) {
+      console.error("service worker failed to register", error);
+    }
+  });
+}
