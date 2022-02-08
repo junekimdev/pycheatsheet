@@ -7,13 +7,23 @@
   "scope": ".",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/py-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/py-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-256x256.png",
-      "sizes": "256x256",
+      "src": "/py-270x270.png",
+      "sizes": "270x270",
+      "type": "image/png"
+    },
+    {
+      "src": "/py-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
