@@ -1,4 +1,4 @@
-const VERSION = "1.0.5";
+const VERSION = "1.0.6";
 const STATIC_CACHE = `static-v${VERSION}`;
 const DYNAMIC_CACHE = `dynamic-v${VERSION}`;
 const installList = [
@@ -9,7 +9,7 @@ const installList = [
   "/py.webp",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
   "/guilty_dog.jpg",
-  "/fallback.html",
+  "/offline.html",
 ];
 
 const limitCacheSize = async (cache, size) => {
