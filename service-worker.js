@@ -61,7 +61,7 @@ self.addEventListener("fetch", (event) => {
       } catch (error) {
         // HTML Fallback
         if (event.request.url.indexOf(".html") > -1)
-          return caches.match("/fallback.html");
+          return caches.match("/offline.html");
         if (!(res instanceof Response)) return new Response();
       }
 
