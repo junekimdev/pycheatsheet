@@ -1,4 +1,4 @@
-const VERSION = "1.0.9";
+const VERSION = "1.0.10";
 const STATIC_CACHE = `static-v${VERSION}`;
 const DYNAMIC_CACHE = `dynamic-v${VERSION}`;
 const installList = [
@@ -7,7 +7,7 @@ const installList = [
   "/style-media.css",
   "/main.js",
   "/py.webp",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
   "/guilty_dog.jpg",
   "/offline.html",
 ];
