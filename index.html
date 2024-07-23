@@ -20,8 +20,8 @@
     <title>파이썬 요약집(기초)</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -1494,10 +1494,10 @@
                   <td>
                     <pre>
 <code class="comment">#키로 접근</code>
-<code>c = a[1]</code>
-<code>c = a[2]</code>
 <code>c = a["가"]</code>
 <code>c = a["나"]</code>
+<code>c = b[1]</code>
+<code>c = b[2]</code>
 </pre>
                   </td>
                   <td>
@@ -1505,12 +1505,17 @@
 <code class="comment">#키가 이미 있으면 변경, 키가 없으면 추가</code>
 
 <code class="comment">#키로 접근하여</code>
-<code>a[1] = "라"</code><code class="comment">         #변경</code>
-<code>a["라"] = 4</code><code class="comment">         #추가</code>
+<code>a["라"] = 4</code><code class="comment">         #변경</code>
+<code>b[4] = "라"</code><code class="comment">         #추가</code>
 
 <code class="comment">#update()로</code>
-<code>a.update({1:"라"})</code><code class="comment">  #변경</code>
-<code>a.update({4:"라"})</code><code class="comment">  #추가</code>
+<code>b.update({1:"라"})</code><code class="comment">  #변경</code>
+<code>b.update({4:"라"})</code><code class="comment">  #추가</code>
+
+<code class="comment">#반복가능한 객체로 (키-밸류)값을 전달</code>
+<code>b.update([{5:"마",6:"바"}])</code><code class="comment">   #딕셔네리</code>
+<code>b.update([(5,"마"),(6,"바")])</code><code class="comment"> #튜플 리스트</code>
+<code>b.update([[5,"마"],[6,"바"]])</code><code class="comment"> #2차원 리스트</code>
 </pre>
                   </td>
                   <td>
@@ -1552,7 +1557,7 @@
 <code>a.add(10)</code>
 
 <code class="comment">#update()</code>
-<code>a.update(b)</code><code class="comment">          #b를 더하기</code>
+<code>a.update(b)</code><code class="comment">          #세트 b를 a에 더하기</code>
 <code>a.update({1, 2, 3})</code><code class="comment">  #세트</code>
 
 
@@ -1588,6 +1593,12 @@
               </tbody>
             </table>
           </div>
+          <p>
+            딕셔네리와 세트의 업데이트 메서드인 <code>update()</code>는 리스트,
+            튜플, 딕셔네리, 셋트 등의 반복가능(iterable) 객체를 전달인자로
+            받는다. 특히, 딕셔네리의 경우 키-밸류 값을 담고 있는 객체를 전달해야
+            한다.
+          </p>
           <p>
             딕셔네리의 삭제 메서드인 <code>popitem()</code>는 추가된 순서를
             기준으로 마지막 <code>키:밸류</code>를 삭제하므로, 버전 3.6 이하에선
@@ -4269,7 +4280,7 @@
     </main>
     <footer>
       <p>
-        Copyright &copy; 2022
+        Copyright &copy; 2022-2024
         <a
           href="https://github.com/junekimdev"
           target="_blank"
@@ -4277,7 +4288,7 @@
           >June Kim</a
         >. All rights reserved.
       </p>
-      <p>Last-updated at 2022/01/14</p>
+      <p>Last-updated at 2024/07/23</p>
     </footer>
   </body>
 </html>
