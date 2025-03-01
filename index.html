@@ -2563,7 +2563,7 @@
             <pre>
 <code class="comment">#예제</code>
 <code class="comment">#필수 인자: id, name | 선택 인자: type, dps, hp</code>
-<code>def create_character(id, name, type="user", *, dps=1000, hp=10000)</code>
+<code>def create_character(id, name, type="user", *, dps=1000, hp=10000):</code>
 <code>    return {"id":id, "name":name, "type":type, "dps":dps, "hp":hp}</code>
 
 <code>user1 = create_character(1, "John")</code>
@@ -2623,7 +2623,7 @@
 <code>    if n == 1:</code><code class="comment">                     #재귀 종료 조건</code>
 <code>        return 1</code>
 <code>    else:</code>
-<code>        return x * factorial(n-1)</code><code class="comment">  #재귀</code>
+<code>        return n * factorial(n-1)</code><code class="comment">  #재귀</code>
 
 <code>a = factorial(4)</code>
 <code class="comment">#결과: a => 4*3*2*1=24</code>
