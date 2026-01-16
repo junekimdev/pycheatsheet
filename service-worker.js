@@ -1,4 +1,4 @@
-const VERSION = "1.0.13";
+const VERSION = "1.0.14";
 const STATIC_CACHE = `static-v${VERSION}`;
 const DYNAMIC_CACHE = `dynamic-v${VERSION}`;
 const installList = [
