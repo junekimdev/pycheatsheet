@@ -45,8 +45,16 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  // For non-http requests, do the default
+  if (
+    !event.request.url.startsWith("http:") &&
+    !event.request.url.startsWith("https:")
+  )
+    return;
+
   // For non-GET requests, do the default
   if (event.request.method != "GET") return;
+
   // For GET requests, prevent the default and handle the request
   event.respondWith(
     (async () => {
